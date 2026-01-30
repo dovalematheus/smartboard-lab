@@ -9,6 +9,8 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         /* --- CONFIGURAÇÕES GERAIS --- */
         :root {
@@ -19,9 +21,9 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; } /* Evita rolagem lateral na animação */
         body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
-        a { text-decoration: none; color: inherit; } /* Link herda cor */
+        a { text-decoration: none; color: inherit; } 
         ul { list-style: none; }
 
         /* --- NAVBAR --- */
@@ -84,7 +86,7 @@
         .hero .btn-hero:hover { transform: scale(1.05); background-color: white; }
 
         /* --- SEÇÕES GERAIS --- */
-        .about { padding: 6rem 2rem; background: white; border-bottom: 1px solid #eee; }
+        .about { padding: 6rem 2rem; background: white; border-bottom: 1px solid #eee; overflow: hidden; }
         .about-container { max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 3rem; }
         .about-text { flex: 1; min-width: 300px; }
         .about-text h2 { color: var(--primary-dark); font-size: 2.5rem; margin-bottom: 1.5rem; }
@@ -98,7 +100,7 @@
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
         
         /* Estilo do Card Linkável */
-        .service-link { display: block; transition: 0.3s; }
+        .service-link { display: block; transition: 0.3s; text-decoration: none; }
         .card {
             background: white; padding: 2.5rem 2rem; border-radius: 15px; height: 100%;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s;
@@ -138,8 +140,8 @@
             }
             .nav-links.active { right: 0; }
             .hero h1 { font-size: 2.5rem; }
-            .about-container { flex-direction: column; }
             .hero { background-attachment: scroll !important; background-position: center top !important; }
+            .about-container { flex-direction: column; }
         }
     </style>
 </head>
@@ -175,7 +177,7 @@
     </header>
 
     <section id="home" class="hero">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
             <h1>Conserto de Placa Apple e GPU em Curitiba</h1>
             <p>Laboratório técnico especializado na recuperação de MacBooks, iPhones e Placas de Vídeo no Cajuru.</p>
             <button class="btn-hero" onclick="document.getElementById('services').scrollIntoView()">Conhecer Serviços</button>
@@ -184,12 +186,12 @@
 
     <section id="about" class="about">
         <div class="about-container">
-            <div class="about-text">
+            <div class="about-text" data-aos="fade-right">
                 <h2>Quem Somos</h2>
                 <p>A <strong>Smartboard Lab</strong> nasceu da necessidade de um serviço técnico que fosse além da simples troca de peças. Somos um laboratório especializado em microsoldagem e análise de circuitos eletrônicos.</p>
                 <p>Nossa missão é diagnosticar e reparar falhas complexas em nível de componente, oferecendo uma solução econômica e sustentável.</p>
             </div>
-            <div class="about-stats">
+            <div class="about-stats" data-aos="fade-left">
                 <div class="stat-box">
                     <span class="stat-number">+5k</span>
                     <span class="stat-label">Placas Recuperadas</span>
@@ -203,11 +205,12 @@
     </section>
 
     <section id="services" class="services">
-        <h2 class="section-title">Nossos Serviços</h2>
-        <p style="color:#666; margin-bottom:30px">Escolha uma especialidade para saber mais</p>
+        <h2 class="section-title" data-aos="fade-up">Nossos Serviços</h2>
+        <p style="color:#666; margin-bottom:30px" data-aos="fade-up" data-aos-delay="100">Escolha uma especialidade para saber mais</p>
         
         <div class="services-grid">
-            <a href="reparo-placa-iphone/" class="service-link">
+            
+            <a href="reparo-placa-iphone/" class="service-link" data-aos="fade-up" data-aos-delay="100">
                 <div class="card">
                     <i class="fab fa-apple card-icon"></i>
                     <h3>Reparo de Placa</h3>
@@ -216,7 +219,7 @@
                 </div>
             </a>
 
-            <a href="reparo-face-id/" class="service-link">
+            <a href="reparo-face-id/" class="service-link" data-aos="fade-up" data-aos-delay="200">
                 <div class="card">
                     <i class="fas fa-id-card-alt card-icon"></i>
                     <h3>Face ID</h3>
@@ -225,7 +228,7 @@
                 </div>
             </a>
 
-            <a href="reparo-macbook/" class="service-link">
+            <a href="reparo-macbook/" class="service-link" data-aos="fade-up" data-aos-delay="300">
                 <div class="card">
                     <i class="fas fa-laptop card-icon"></i>
                     <h3>MacBook</h3>
@@ -234,7 +237,7 @@
                 </div>
             </a>
 
-            <a href="troca-vidro-traseiro/" class="service-link">
+            <a href="troca-vidro-traseiro/" class="service-link" data-aos="fade-up" data-aos-delay="400">
                 <div class="card">
                     <i class="fas fa-bullseye card-icon"></i>
                     <h3>Vidro Traseiro Laser</h3>
@@ -243,7 +246,7 @@
                 </div>
             </a>
 
-            <a href="troca-vidro-iphone/" class="service-link">
+            <a href="troca-vidro-iphone/" class="service-link" data-aos="fade-up" data-aos-delay="500">
                 <div class="card">
                     <i class="fas fa-mobile-alt card-icon"></i>
                     <h3>Troca de Vidro (Tela)</h3>
@@ -252,7 +255,7 @@
                 </div>
             </a>
 
-            <a href="recuperacao-dados/" class="service-link">
+            <a href="recuperacao-dados/" class="service-link" data-aos="fade-up" data-aos-delay="600">
                 <div class="card">
                     <i class="fas fa-database card-icon"></i>
                     <h3>Recuperação de Dados</h3>
@@ -263,7 +266,7 @@
         </div>
     </section>
 
-    <section class="tech-tags-section">
+    <section class="tech-tags-section" data-aos="fade-up">
         <h3 style="color: var(--primary-dark); margin-bottom: 1.5rem; font-size: 1.2rem;">Especialidades Técnicas</h3>
         <div class="tech-tags-container">
             <span class="tech-tag">Reparo de FaceID</span>
@@ -288,6 +291,15 @@
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
         }
+    </script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, // Duração da animação (0.8s)
+        once: true,    // Anima apenas na primeira descida (mais elegante)
+        offset: 100    // Começa a animar 100px antes do elemento aparecer
+      });
     </script>
 </body>
 </html>
