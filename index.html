@@ -9,25 +9,6 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MobilePhoneRepair",
-      "name": "Smartboard Lab",
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua Engenheiro Costa Barros, 805, loja 5",
-        "addressLocality": "Curitiba",
-        "addressRegion": "PR",
-        "postalCode": "82950-420",
-        "addressCountry": "BR"
-      },
-      "telephone": "+5541974037270",
-      "priceRange": "$$"
-    }
-    </script>
-
     <style>
         /* --- CONFIGURAÇÕES GERAIS --- */
         :root {
@@ -40,7 +21,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
-        a { text-decoration: none; }
+        a { text-decoration: none; color: inherit; } /* Link herda cor */
         ul { list-style: none; }
 
         /* --- NAVBAR --- */
@@ -75,36 +56,25 @@
         .mobile-toggle { display: none; font-size: 1.5rem; color: var(--primary-dark); cursor: pointer; z-index: 1001; }
         .mobile-only-link { display: none; }
 
-        /* --- HERO (CORRIGIDO E BLINDADO) --- */
+        /* --- HERO --- */
         .hero {
             height: 90vh; display: flex; align-items: center; justify-content: center;
             text-align: center; 
             position: relative; padding: 0 2rem; 
             margin-top: 60px; 
             background-color: var(--primary-dark);
-            
-            /* DEFINIÇÃO ROBUSTA DE BACKGROUND */
             background-image: linear-gradient(135deg, rgba(15, 43, 70, 0.85), rgba(15, 43, 70, 0.75)), 
                               url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');
             background-size: cover; 
             background-position: center center; 
             background-repeat: no-repeat;
-            background-attachment: fixed; /* Padrão PC */
+            background-attachment: fixed;
         }
 
         .hero-content { color: white; max-width: 800px; z-index: 2; }
         
-        .hero h1 { 
-            font-size: 3.5rem; 
-            margin-bottom: 1rem; 
-            line-height: 1.2; 
-        }
-
-        .hero p { 
-            font-size: 1.2rem; 
-            margin-bottom: 3rem; 
-            opacity: 0.95; 
-        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; line-height: 1.2; }
+        .hero p { font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.95; }
         
         .hero .btn-hero {
             background-color: var(--accent-teal); color: var(--primary-dark);
@@ -122,16 +92,23 @@
         .stat-box { background: var(--bg-light); padding: 2rem; border-radius: 12px; text-align: center; min-width: 140px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .stat-number { display: block; font-size: 2.5rem; font-weight: 800; color: #0284c7; }
 
+        /* --- GRID DE SERVIÇOS (LINKS) --- */
         .services { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; text-align: center; }
         .section-title { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 1rem; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        
+        /* Estilo do Card Linkável */
+        .service-link { display: block; transition: 0.3s; }
         .card {
-            background: white; padding: 2.5rem 2rem; border-radius: 15px;
+            background: white; padding: 2.5rem 2rem; border-radius: 15px; height: 100%;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s;
-            border-top: 4px solid var(--accent-teal); cursor: pointer;
+            border-top: 4px solid var(--accent-teal); display: flex; flex-direction: column; align-items: center;
         }
-        .card:hover { transform: translateY(-10px); }
+        .service-link:hover .card { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
         .card-icon { font-size: 2.5rem; color: var(--accent-teal); margin-bottom: 1.5rem; }
+        .card h3 { color: var(--primary-dark); margin-bottom: 10px; }
+        .card p { color: #666; font-size: 0.95rem; }
+        .card-btn { margin-top: auto; color: var(--accent-teal); font-weight: bold; padding-top: 15px; font-size: 0.9rem; }
 
         /* --- TAGS TÉCNICAS --- */
         .tech-tags-section { background-color: #f1f5f9; padding: 3rem 2rem; text-align: center; border-top: 1px solid #e5e7eb; }
@@ -140,21 +117,6 @@
             background: white; color: #555; padding: 6px 14px; border-radius: 20px;
             font-size: 0.85rem; border: 1px solid #ddd; cursor: default;
         }
-
-        /* --- MODAL --- */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(15, 43, 70, 0.9); z-index: 2000;
-            display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;
-        }
-        .modal-content {
-            background: white; width: 90%; max-width: 500px; padding: 2.5rem;
-            border-radius: 12px; position: relative; max-height: 80vh; overflow-y: auto;
-        }
-        .modal-overlay.active { display: flex; opacity: 1; }
-        .close-modal { position: absolute; top: 10px; right: 20px; font-size: 2rem; cursor: pointer; color: #ccc; }
-        .service-list li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; color: #555; display: flex; align-items: center; text-align: left; }
-        .service-list li::before { content: "\f058"; font-family: "Font Awesome 6 Free"; font-weight: 900; color: var(--accent-teal); margin-right: 10px; }
 
         footer { background-color: #0a1f33; color: white; padding: 4rem 2rem; text-align: center; }
 
@@ -175,15 +137,9 @@
                 transition: 0.3s ease-in-out;
             }
             .nav-links.active { right: 0; }
-            
             .hero h1 { font-size: 2.5rem; }
             .about-container { flex-direction: column; }
-
-            /* --- CORREÇÃO DE FUNDO MOBILE (FORÇA BRUTA) --- */
-            .hero {
-                background-attachment: scroll !important; /* Desativa parallax */
-                background-position: center top !important; /* Alinha no topo */
-            }
+            .hero { background-attachment: scroll !important; background-position: center top !important; }
         }
     </style>
 </head>
@@ -248,26 +204,62 @@
 
     <section id="services" class="services">
         <h2 class="section-title">Nossos Serviços</h2>
-        <p style="color:#666; margin-bottom:30px">Clique para ver todos os detalhes</p>
+        <p style="color:#666; margin-bottom:30px">Escolha uma especialidade para saber mais</p>
         
         <div class="services-grid">
-            <div class="card" onclick="openModal('apple')">
-                <i class="fab fa-apple card-icon"></i>
-                <h3>iPhone</h3>
-                <p>Especialistas em placas lógicas, FaceID e manutenções complexas.</p>
-            </div>
+            <a href="reparo-placa-iphone/" class="service-link">
+                <div class="card">
+                    <i class="fab fa-apple card-icon"></i>
+                    <h3>Reparo de Placa</h3>
+                    <p>Curto total, erro 4013, sem sinal, ou iPhone que não liga. Microsoldagem avançada.</p>
+                    <span class="card-btn">Ver Detalhes &rarr;</span>
+                </div>
+            </a>
 
-            <div class="card" onclick="openModal('macbook')">
-                <i class="fas fa-laptop card-icon"></i>
-                <h3>Macbooks</h3>
-                <p>Da troca de peças à reparação complexa na placa lógica.</p>
-            </div>
+            <a href="reparo-face-id/" class="service-link">
+                <div class="card">
+                    <i class="fas fa-id-card-alt card-icon"></i>
+                    <h3>Face ID</h3>
+                    <p>Correção de "Mova para cima/baixo" e Face ID indisponível sem perder a função.</p>
+                    <span class="card-btn">Ver Detalhes &rarr;</span>
+                </div>
+            </a>
 
-            <div class="card" onclick="openModal('gpu')">
-                <i class="fas fa-microchip card-icon"></i>
-                <h3>Placas de Vídeo</h3>
-                <p>Recuperação de GPUs, reballing e reparos em circuitos VRM.</p>
-            </div>
+            <a href="reparo-macbook/" class="service-link">
+                <div class="card">
+                    <i class="fas fa-laptop card-icon"></i>
+                    <h3>MacBook</h3>
+                    <p>Reparo de placa lógica, falhas de carregamento, teclado e upgrade.</p>
+                    <span class="card-btn">Ver Detalhes &rarr;</span>
+                </div>
+            </a>
+
+            <a href="troca-vidro-traseiro/" class="service-link">
+                <div class="card">
+                    <i class="fas fa-bullseye card-icon"></i>
+                    <h3>Vidro Traseiro Laser</h3>
+                    <p>Troca a laser do vidro traseiro quebrado. Acabamento 100% original.</p>
+                    <span class="card-btn">Ver Detalhes &rarr;</span>
+                </div>
+            </a>
+
+            <a href="troca-vidro-iphone/" class="service-link">
+                <div class="card">
+                    <i class="fas fa-mobile-alt card-icon"></i>
+                    <h3>Troca de Vidro (Tela)</h3>
+                    <p>Troque apenas o vidro quebrado e economize mantendo seu display original.</p>
+                    <span class="card-btn">Ver Detalhes &rarr;</span>
+                </div>
+            </a>
+
+            <a href="recuperacao-dados/" class="service-link">
+                <div class="card">
+                    <i class="fas fa-database card-icon"></i>
+                    <h3>Recuperação de Dados</h3>
+                    <p>Extração forense de dados em iPhones mortos, molhados ou destruídos.</p>
+                    <span class="card-btn">Ver Detalhes &rarr;</span>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -292,46 +284,10 @@
         <div style="margin-top:20px; font-size:0.8rem; opacity:0.6">&copy; 2026 Smartboard Lab.</div>
     </footer>
 
-    <div class="modal-overlay" id="modalOverlay">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal()">&times;</span>
-            <div id="modalBody"></div>
-            <div style="margin-top: 25px; text-align: center;">
-                <a id="modalBtn" href="#" target="_blank" class="btn-cta">
-                    <i class="fab fa-whatsapp"></i> Solicitar Orçamento
-                </a>
-            </div>
-        </div>
-    </div>
-
     <script>
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
         }
-
-        const whatsappNumber = "5541974037270";
-        const servicesData = {
-            apple: { title: 'Serviços iPhone', items: ["Reparo Placa", "FaceID", "Troca Vidro", "Não liga", "Curto total", "Sem sinal (Baseband)"] },
-            macbook: { title: 'Macbooks', items: ["Placa Lógica", "Troca Tela", "Bateria", "Teclado", "Banho Químico", "SSD"] },
-            gpu: { title: 'Placas de Vídeo', items: ["Reballing GPU", "VRM (Curto)", "12V PCIe", "Thermal Pads", "Artefatos", "Conectores"] }
-        };
-
-        const modalOverlay = document.getElementById('modalOverlay');
-        const modalBody = document.getElementById('modalBody');
-        const modalBtn = document.getElementById('modalBtn');
-
-        function openModal(type) {
-            const data = servicesData[type];
-            let listHtml = `<h3 style="color:#0F2B46; margin-bottom:15px">${data.title}</h3><ul class="service-list">`;
-            data.items.forEach(item => { listHtml += `<li>${item}</li>`; });
-            listHtml += '</ul>';
-            modalBody.innerHTML = listHtml;
-            modalBtn.href = `https://wa.me/${whatsappNumber}?text=Orçamento para: ${data.title}`;
-            modalOverlay.classList.add('active');
-        }
-
-        function closeModal() { modalOverlay.classList.remove('active'); }
-        modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) closeModal(); });
     </script>
 </body>
 </html>
