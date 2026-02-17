@@ -3,8 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conserto de MacBook em Curitiba - Smartboard Lab</title>
-    <meta name="description" content="Especialista em reparo de placa lógica de MacBook Pro e Air em Curitiba. Resolvemos falhas de carregamento, teclado, imagem e upgrade.">
+    <title>Conserto de MacBook em Curitiba | Smartboard Lab - Especialista M1, M2, M3</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Especialista em reparo de placa lógica de MacBook Pro e Air (M1, M2, M3) em Curitiba. Recuperação avançada de hardware Apple Silicon no Cajuru. Fale com um engenheiro.">
+    <meta name="keywords" content="reparo macbook curitiba, conserto macbook m3, placa logica macbook m1, assistência técnica apple curitiba, smartboard lab">
+    <meta name="author" content="Smartboard Lab">
+    
+    <!-- Open Graph (Social Media SEO) -->
+    <meta property="og:title" content="Smartboard Lab | Especialista em MacBook Apple Silicon Curitiba">
+    <meta property="og:description" content="Reparo avançado de placa lógica para MacBook Pro e Air. Tecnologia de ponta em Curitiba.">
+    <meta property="og:image" content="reparo-placa-macbook-pro-m3-apple-silicon-curitiba-cajuru.jpg">
+    <meta property="og:url" content="https://smartboardlab.com.br">
+    <meta property="og:type" content="website">
+
+    <!-- JSON-LD Local Business (Google SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Smartboard Lab",
+      "image": "reparo-placa-macbook-pro-m3-apple-silicon-curitiba-cajuru.jpg",
+      "description": "Especialista em reparo de placa lógica de MacBook Pro e Air em Curitiba.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Curitiba",
+        "addressRegion": "PR",
+        "addressCountry": "BR",
+        "neighborhood": "Cajuru"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -25.4411,
+        "longitude": -49.2208
+      },
+      "url": "https://smartboardlab.com.br",
+      "telephone": "+5541974037270",
+      "priceRange": "$$"
+    }
+    </script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -17,63 +55,72 @@
         .navbar { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 10px; }
         .logo i { color: var(--accent-teal); }
-        .btn-cta { background-color: var(--primary-dark); color: white; padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 600; }
+        .btn-cta { background-color: var(--primary-dark); color: white; padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 600; transition: 0.3s ease; }
+        .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(15, 43, 70, 0.3); }
         
         .hero {
-            height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center;
+            height: 75vh; display: flex; align-items: center; justify-content: center; text-align: center;
             padding: 0 2rem; margin-top: 60px; position: relative; background-color: var(--primary-dark);
-            background-image: linear-gradient(135deg, rgba(15, 43, 70, 0.9), rgba(15, 43, 70, 0.8)), url('https://images.unsplash.com/photo-1531297461136-82lw8?q=80&w=2070');
+            /* Substituído pelo arquivo local com tratamento de brilho para legibilidade */
+            background-image: linear-gradient(135deg, rgba(15, 43, 70, 0.85), rgba(15, 43, 70, 0.7)), url('reparo-placa-macbook-pro-m3-apple-silicon-curitiba-cajuru.jpg');
             background-size: cover; background-position: center;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: white; }
-        .hero p { font-size: 1.2rem; color: #eee; margin-bottom: 2rem; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; color: white; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.3rem; color: #eee; margin-bottom: 2rem; max-width: 800px; }
         
-        .content { max-width: 900px; margin: 4rem auto; padding: 0 2rem; }
-        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .service-item { background: white; padding: 2rem; border-radius: 8px; border-left: 4px solid var(--accent-teal); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .content { max-width: 1100px; margin: 4rem auto; padding: 0 2rem; }
+        .grid-services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 2rem; }
+        .service-item { background: white; padding: 2.5rem; border-radius: 12px; border-top: 5px solid var(--accent-teal); box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .service-item:hover { transform: translateY(-10px); }
+        .service-item h3 { margin-bottom: 1rem; color: var(--primary-dark); display: flex; align-items: center; gap: 10px; }
 
         footer { background: #0a1f33; color: white; padding: 3rem; text-align: center; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } }
+        .footer-logo { font-size: 1.2rem; margin-bottom: 1rem; opacity: 0.8; }
+        
+        @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .hero { height: 65vh; } }
     </style>
 </head>
 <body>
     <header>
         <div class="navbar">
             <div class="logo"><a href="/" style="color:inherit"><i class="fas fa-microchip"></i> Smartboard Lab</a></div>
-            <a href="https://wa.me/5541974037270" class="btn-cta">Orçamento</a>
+            <a href="https://wa.me/5541974037270" class="btn-cta">Orçamento Via WhatsApp</a>
         </div>
     </header>
 
     <section class="hero">
-        <div>
-            <h1>Especialista em MacBook</h1>
-            <p>Do chip Intel ao Apple Silicon (M1, M2, M3). Reparamos a placa lógica ao invés de trocar a máquina inteira.</p>
-            <a href="https://wa.me/5541974037270?text=Preciso%20de%20reparo%20no%20Macbook" class="btn-cta" style="background:var(--accent-teal); color:var(--primary-dark)">Falar com Engenheiro</a>
+        <div class="hero-content">
+            <h1>Especialista MacBook M1, M2 e M3</h1>
+            <p>Reparo de placa lógica em Curitiba com precisão de engenharia. Recuperamos o seu Apple Silicon original sem a necessidade de substituição total.</p>
+            <a href="https://wa.me/5541974037270?text=Olá%20Matheusão,%20preciso%20de%20um%20reparo%20especializado%20no%20meu%20Macbook" class="btn-cta" style="background:var(--accent-teal); color:var(--primary-dark); font-size: 1.1rem;">Falar com Engenheiro</a>
         </div>
     </section>
 
-    <section class="content">
-        <h2 style="color:var(--primary-dark); margin-bottom:1rem">Soluções para Mac</h2>
-        <p>MacBooks são máquinas robustas, mas sofrem com falhas de projeto e desgaste. Nossa abordagem é técnica e cirúrgica.</p>
+    <main class="content">
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <h2 style="color:var(--primary-dark); font-size: 2.5rem;">Tecnologia de Reparo Avançada</h2>
+            <p style="max-width: 700px; margin: 1rem auto;">Utilizamos microscopia de alta resolução e análise termográfica para identificar curtos em linhas primárias e secundárias (PPBUS_AON, PP3V3_S2, etc).</p>
+        </div>
         
         <div class="grid-services">
             <div class="service-item">
                 <h3><i class="fas fa-microchip"></i> Reparo de Placa Lógica</h3>
-                <p>Curto-circuito, falha no chip T2, oxidação por líquido ou máquina que não liga. Recuperamos sua placa original.</p>
+                <p>Diagnóstico avançado em circuitos de alimentação e comunicação digital. Especialistas em arquitetura Apple Silicon e processadores Intel.</p>
             </div>
             <div class="service-item">
-                <h3><i class="fas fa-keyboard"></i> Teclado e Bateria</h3>
-                <p>Substituição de teclados com falha (borboleta ou tesoura) e baterias inchadas ou viciadas com peças de alta qualidade.</p>
+                <h3><i class="fas fa-tint-slash"></i> Recuperação de Líquidos</h3>
+                <p>Protocolo rigoroso de limpeza ultrassônica e reconstrução de pads oxidados sob integrados (BGA/QFN).</p>
             </div>
             <div class="service-item">
-                <h3><i class="fas fa-wind"></i> Limpeza Técnica</h3>
-                <p>Troca de pasta térmica (Arctic Silver/Kryonaut) e limpeza dos coolers para resolver superaquecimento e lentidão.</p>
+                <h3><i class="fas fa-temperature-low"></i> Gestão Térmica</h3>
+                <p>Manutenção preventiva com materiais de interface térmica de alta condutividade para CPUs M2/M3 Max.</p>
             </div>
         </div>
-    </section>
+    </main>
 
     <footer>
-        <p>Smartboard Lab - Apple Specialist</p>
+        <div class="footer-logo">Smartboard Lab | Microeletrônica Aplicada</div>
+        <p>Curitiba - PR | Atendimento Especializado Apple</p>
     </footer>
 </body>
 </html>
