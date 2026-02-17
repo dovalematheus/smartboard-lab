@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Troca de Vidro iPhone (Mantendo o Original) - Smartboard Lab</title>
-    <meta name="description" content="Troca somente do vidro quebrado do iPhone em Curitiba. Economize até 50% mantendo seu display original Apple. Recondicionamento profissional.">
+    <title>Troca de Vidro iPhone em Curitiba - Mantendo Display Original Apple - Smartboard Lab</title>
+    <meta name="description" content="Troca especializada de vidro de iPhone em Curitiba. Economize até 50% mantendo seu display original Apple. Recondicionamento profissional com cola OCA.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -17,75 +17,89 @@
         .navbar { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 10px; }
         .logo i { color: var(--accent-teal); }
-        .btn-cta { background-color: var(--primary-dark); color: white; padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 600; }
+        .btn-cta { background-color: var(--primary-dark); color: white; padding: 0.6rem 1.5rem; border-radius: 50px; font-weight: 600; transition: 0.3s; }
+        .btn-cta:hover { opacity: 0.9; transform: translateY(-2px); }
         
         .hero {
-            height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center;
+            height: 70vh; display: flex; align-items: center; justify-content: center; text-align: center;
             padding: 0 2rem; margin-top: 60px; position: relative; background-color: var(--primary-dark);
-            background-image: linear-gradient(135deg, rgba(15, 43, 70, 0.9), rgba(15, 43, 70, 0.8)), url('https://images.unsplash.com/photo-1629815033872-4687d60df645?q=80&w=2070');
+            /* Substituído Unsplash pela imagem real enviada */
+            background-image: linear-gradient(135deg, rgba(15, 43, 70, 0.85), rgba(15, 43, 70, 0.7)), url('troca-vidro-frontal-iphone-13-pro-max-mantem-display-original.jpg');
             background-size: cover; background-position: center;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: white; }
-        .hero p { font-size: 1.2rem; color: #eee; margin-bottom: 2rem; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: white; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.2rem; color: #eee; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
         
-        .content { max-width: 900px; margin: 4rem auto; padding: 0 2rem; }
+        .content { max-width: 1000px; margin: 4rem auto; padding: 0 2rem; }
         .comparison { display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
-        .col { flex: 1; padding: 2rem; background: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .col { flex: 1; padding: 2.5rem; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
         .col.bad { border-top: 5px solid #ef4444; }
-        .col.good { border-top: 5px solid var(--accent-teal); transform: scale(1.02); }
+        .col.good { border-top: 5px solid var(--accent-teal); transform: scale(1.05); position: relative; }
+        .best-value { position: absolute; top: -15px; right: 20px; background: var(--accent-teal); color: var(--primary-dark); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
 
         footer { background: #0a1f33; color: white; padding: 3rem; text-align: center; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } }
+        
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2.2rem; }
+            .col.good { transform: scale(1); margin-top: 1rem; }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="navbar">
             <div class="logo"><a href="/" style="color:inherit"><i class="fas fa-microchip"></i> Smartboard Lab</a></div>
-            <a href="https://wa.me/5541974037270" class="btn-cta">Cotar Vidro</a>
+            <a href="https://wa.me/5541974037270" class="btn-cta">Orçamento WhatsApp</a>
         </div>
     </header>
 
     <section class="hero">
         <div>
-            <h1>Recondicionamento de Tela</h1>
-            <p>Se a imagem do seu iPhone está normal e o touch funciona, não troque a tela inteira. Trocamos apenas o vidro.</p>
-            <a href="https://wa.me/5541974037270?text=Meu%20vidro%20quebrou%20mas%20a%20imagem%20está%20boa" class="btn-cta" style="background:var(--accent-teal); color:var(--primary-dark)">Economizar Agora</a>
+            <h1>Recondicionamento de Telas iPhone</h1>
+            <p>Seu vidro quebrou mas a imagem está perfeita? Mantenha sua tela original Apple e economize até 50% em relação a uma tela nova.</p>
+            <a href="https://wa.me/5541974037270?text=Olá,%20vi%20o%20site.%20Meu%20vidro%20quebrou%20mas%20a%20imagem%20está%20boa.%20Gostaria%20de%20um%20orçamento." class="btn-cta" style="background:var(--accent-teal); color:var(--primary-dark)">Consultar Preço Agora</a>
         </div>
     </section>
 
     <section class="content">
-        <h2 style="text-align: center; margin-bottom: 3rem; color:var(--primary-dark)">Por que trocar só o vidro?</h2>
+        <h2 style="text-align: center; margin-bottom: 3.5rem; color:var(--primary-dark); font-size: 2.2rem;">Por que optar pela Troca de Vidro?</h2>
         
         <div class="comparison">
             <div class="col bad">
-                <h3 style="color:#ef4444; margin-bottom:1rem"><i class="fas fa-times-circle"></i> Tela Paralela (Comum)</h3>
+                <h3 style="color:#ef4444; margin-bottom:1.5rem"><i class="fas fa-times-circle"></i> Tela Paralela Incell/OLED</h3>
                 <ul style="list-style: none;">
-                    <li style="margin-bottom:10px">❌ Cores lavadas e sem brilho</li>
-                    <li style="margin-bottom:10px">❌ Touch pode falhar</li>
-                    <li style="margin-bottom:10px">❌ Perde o TrueTone</li>
-                    <li style="margin-bottom:10px">❌ Aviso de "Peça Desconhecida"</li>
+                    <li style="margin-bottom:12px">❌ Cores lavadas e touch impreciso</li>
+                    <li style="margin-bottom:12px">❌ Consumo de bateria elevado</li>
+                    <li style="margin-bottom:12px">❌ Perda definitiva do TrueTone</li>
+                    <li style="margin-bottom:12px">❌ Mensagem de "Peça Desconhecida"</li>
                 </ul>
             </div>
             
             <div class="col good">
-                <h3 style="color:var(--accent-teal); margin-bottom:1rem"><i class="fas fa-check-circle"></i> Troca de Vidro (Smartboard)</h3>
+                <span class="best-value">RECOMENDADO</span>
+                <h3 style="color:var(--accent-teal); margin-bottom:1.5rem"><i class="fas fa-check-circle"></i> Troca de Vidro Original</h3>
                 <ul style="list-style: none;">
-                    <li style="margin-bottom:10px">✅ Mantém o LCD/OLED Original Apple</li>
-                    <li style="margin-bottom:10px">✅ Cores e brilho 100% originais</li>
-                    <li style="margin-bottom:10px">✅ Mantém o TrueTone ativo</li>
-                    <li style="margin-bottom:10px">✅ Economia de até 50%</li>
+                    <li style="margin-bottom:12px">✅ Preserva o LCD/OLED Original</li>
+                    <li style="margin-bottom:12px">✅ Touch e Brilho 100% de fábrica</li>
+                    <li style="margin-bottom:12px">✅ Mantém o TrueTone e FaceID</li>
+                    <li style="margin-bottom:12px">✅ Valorização do seu iPhone na revenda</li>
                 </ul>
             </div>
         </div>
         
-        <p style="margin-top: 3rem; text-align: center; color: #666;">
-            Utilizamos processo industrial de laminação OCA (Optical Clear Adhesive). O resultado é idêntico ao de fábrica.
-        </p>
+        <div style="margin-top: 4rem; text-align: center; background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+            <i class="fas fa-shield-alt" style="font-size: 2.5rem; color: var(--accent-teal); margin-bottom: 1rem;"></i>
+            <h3>Processo Industrial de Laminação OCA</h3>
+            <p style="color: #666; max-width: 800px; margin: 10px auto;">
+                Utilizamos maquinário de última geração para vácuo e pressão, garantindo que o novo vidro seja fundido ao display original sem bolhas ou imperfeições, exatamente como sai da linha de montagem da Apple.
+            </p>
+        </div>
     </section>
 
     <footer>
-        <p>Smartboard Lab - Telas Originais</p>
+        <p><strong>Smartboard Lab Curitiba</strong></p>
+        <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">Especialistas em Microeletrônica e Recondicionamento de Telas</p>
+        <p style="font-size: 0.8rem; margin-top: 20px;">© 2024 - Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
