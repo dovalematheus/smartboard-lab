@@ -58,12 +58,28 @@
             .tech-img-container { text-align: center; }
         }
     </style>
-</head>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '6845583908886955');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=6845583908886955&ev=PageView&noscript=1"
+    /></noscript>
+    </head>
 <body>
     <header>
         <div class="navbar">
             <div class="logo"><a href="/" style="color:inherit"><i class="fas fa-microchip"></i> Smartboard Lab</a></div>
-            <a href="https://wa.me/5541974037270" class="btn-cta">Orçamento</a>
+            <a href="https://wa.me/5541974037270" class="btn-cta" onclick="fbq('track', 'Contact');">Orçamento</a>
         </div>
     </header>
 
@@ -71,7 +87,7 @@
         <div>
             <h1>Recuperação de Face ID</h1>
             <p>Seu iPhone diz "Mova para cima/baixo" ou "Face ID Indisponível"? Nós consertamos sem perder a função.</p>
-            <a href="https://wa.me/5541974037270?text=Problema%20no%20FaceID" class="btn-cta" style="background:var(--accent-teal); color:var(--primary-dark)">Agendar Reparo</a>
+            <a href="https://wa.me/5541974037270?text=Problema%20no%20FaceID" class="btn-cta" style="background:var(--accent-teal); color:var(--primary-dark)" onclick="fbq('track', 'Contact');">Agendar Reparo</a>
         </div>
     </section>
 
@@ -95,7 +111,6 @@
                 <p style="margin-top: 1rem">Diferente de assistências comuns que apenas trocam peças (perdendo a função), nós reescrevemos o serial do componente. Seu desbloqueio facial volta a funcionar como novo.</p>
             </div>
             <div class="tech-img-container">
-                <!-- Imagem inserida com SEO Completo -->
                 <img 
                     src="reparo-face-id-iphone-curitiba-recuperacao-dot-projector-smartboard.jpg" 
                     alt="Programadora JCID V1S Pro realizando leitura e reparo de Dot Projector de iPhone na Smartboard Lab Curitiba"
