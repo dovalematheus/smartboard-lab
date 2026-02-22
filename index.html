@@ -151,7 +151,23 @@
             .about-container { flex-direction: column; }
         }
     </style>
-</head>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '6845583908886955');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=6845583908886955&ev=PageView&noscript=1"
+    /></noscript>
+    </head>
 <body>
 
     <header>
@@ -171,13 +187,13 @@
                 <li><a href="#contact" onclick="toggleMenu()">Contato</a></li>
                 
                 <li class="mobile-only-link">
-                    <a href="https://wa.me/5541974037270" class="btn-cta">
+                    <a href="https://wa.me/5541974037270" class="btn-cta" onclick="fbq('track', 'Contact');">
                         <i class="fab fa-whatsapp"></i> Solicitar Orçamento
                     </a>
                 </li>
             </ul>
 
-            <a href="https://wa.me/5541974037270?text=Olá,%20gostaria%20de%20um%20orçamento%20geral." target="_blank" class="btn-cta">
+            <a href="https://wa.me/5541974037270?text=Olá,%20gostaria%20de%20um%20orçamento%20geral." target="_blank" class="btn-cta" onclick="fbq('track', 'Contact');">
                 <i class="fab fa-whatsapp"></i> Orçamento
             </a>
         </div>
@@ -291,6 +307,18 @@
         <h2>Smartboard Lab</h2>
         <p>Rua Engenheiro Costa Barros, 805, loja 5 - Cajuru - Curitiba/PR</p>
         <p>contato@smartboardlab.com.br</p>
+        
+        <div style="margin: 30px auto; max-width: 600px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+            <iframe 
+                width="100%" 
+                height="250" 
+                frameborder="0" 
+                style="border:0; display:block;" 
+                src="https://maps.google.com/maps?q=Rua%20Engenheiro%20Costa%20Barros,%20805,%20Cajuru,%20Curitiba&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
         <div style="margin-top:20px; font-size:0.8rem; opacity:0.6">&copy; 2026 Smartboard Lab.</div>
     </footer>
 
