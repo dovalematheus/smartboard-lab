@@ -34,20 +34,36 @@
         footer { background: #0a1f33; color: white; padding: 3rem; text-align: center; }
         @media (max-width: 768px) { .hero h1 { font-size: 2rem; } }
     </style>
-</head>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '6845583908886955');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=6845583908886955&ev=PageView&noscript=1"
+    /></noscript>
+    </head>
 <body>
     <header>
         <div class="navbar">
             <div class="logo"><a href="/" style="color:inherit"><i class="fas fa-microchip"></i> Smartboard Lab</a></div>
-            <a href="https://wa.me/5541974037270" class="btn-cta">Falar com Técnico</a>
+            <a href="https://wa.me/5541974037270" class="btn-cta" onclick="fbq('track', 'Contact');">Falar com Técnico</a>
         </div>
     </header>
 
     <section class="hero">
         <div>
             <h1>Recuperação de Dados</h1>
-            <p>Seu iPhone não liga mais e você não tem backup? Não se desespere. Nossos engenheiros acessam a memória diretamente.</p>
-            <a href="https://wa.me/5541974037270?text=Preciso%20recuperar%20meus%20dados" class="btn-cta" style="background:var(--accent-teal); color:var(--primary-dark)">Análise de Emergência</a>
+            <p>Seu iPhone não liga mais e você não tem backup? Não se desespere. Nosso laboratório de microeletrônica acessa a memória diretamente.</p>
+            <a href="https://wa.me/5541974037270?text=Preciso%20recuperar%20meus%20dados" class="btn-cta" style="background:var(--accent-teal); color:var(--primary-dark)" onclick="fbq('track', 'Contact');">Análise de Emergência</a>
         </div>
     </section>
 
