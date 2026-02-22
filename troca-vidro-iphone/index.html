@@ -44,12 +44,28 @@
             .col.good { transform: scale(1); margin-top: 1rem; }
         }
     </style>
-</head>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '6845583908886955');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=6845583908886955&ev=PageView&noscript=1"
+    /></noscript>
+    </head>
 <body>
     <header>
         <div class="navbar">
             <div class="logo"><a href="/" style="color:inherit"><i class="fas fa-microchip"></i> Smartboard Lab</a></div>
-            <a href="https://wa.me/5541974037270" class="btn-cta">Orçamento WhatsApp</a>
+            <a href="https://wa.me/5541974037270" class="btn-cta" onclick="fbq('track', 'Contact');">Orçamento WhatsApp</a>
         </div>
     </header>
 
@@ -57,7 +73,7 @@
         <div>
             <h1>Recondicionamento de Telas iPhone</h1>
             <p>Seu vidro quebrou mas a imagem está perfeita? Mantenha sua tela original Apple e economize até 50% em relação a uma tela nova.</p>
-            <a href="https://wa.me/5541974037270?text=Olá,%20vi%20o%20site.%20Meu%20vidro%20quebrou%20mas%20a%20imagem%20está%20boa.%20Gostaria%20de%20um%20orçamento." class="btn-cta" style="background:var(--accent-teal); color:var(--primary-dark)">Consultar Preço Agora</a>
+            <a href="https://wa.me/5541974037270?text=Olá,%20vi%20o%20site.%20Meu%20vidro%20quebrou%20mas%20a%20imagem%20está%20boa.%20Gostaria%20de%20um%20orçamento." class="btn-cta" style="background:var(--accent-teal); color:var(--primary-dark)" onclick="fbq('track', 'Contact');">Consultar Preço Agora</a>
         </div>
     </section>
 
@@ -99,7 +115,7 @@
     <footer>
         <p><strong>Smartboard Lab Curitiba</strong></p>
         <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">Especialistas em Microeletrônica e Recondicionamento de Telas</p>
-        <p style="font-size: 0.8rem; margin-top: 20px;">© 2024 - Todos os direitos reservados.</p>
+        <p style="font-size: 0.8rem; margin-top: 20px;">© 2026 - Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>
