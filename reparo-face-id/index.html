@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reparo de Face ID em Curitiba - Smartboard Lab</title>
+    <link rel="icon" href="../favicon.png" type="image/png">
     <meta name="description" content="Conserto especializado de Face ID em Curitiba. Resolvemos erros de 'Abaixe/Levante', Face ID indisponível e problemas após contato com água.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -22,7 +23,6 @@
         .hero {
             height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center;
             padding: 0 2rem; margin-top: 60px; position: relative; background-color: var(--primary-dark);
-            /* Imagem de fundo substituída conforme solicitado */
             background-image: linear-gradient(135deg, rgba(15, 43, 70, 0.9), rgba(15, 43, 70, 0.7)), url('tela-configuracao-face-id-iphone-reparo-curitiba.jpg');
             background-size: cover; background-position: center;
         }
@@ -34,7 +34,6 @@
         .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
         .card { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
 
-        /* Estilo da Seção de Tecnologia com a Imagem */
         .tech-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -44,7 +43,7 @@
         }
         .tech-img-container img {
             width: 100%;
-            max-width: 400px; /* Limita largura para não estourar */
+            max-width: 400px;
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.15);
             border: 2px solid var(--accent-teal);
@@ -54,7 +53,7 @@
         
         @media (max-width: 768px) { 
             .hero h1 { font-size: 2rem; } 
-            .tech-grid { grid-template-columns: 1fr; } /* Empilha no mobile */
+            .tech-grid { grid-template-columns: 1fr; } 
             .tech-img-container { text-align: center; }
         }
     </style>
@@ -108,7 +107,7 @@
         <div class="tech-grid">
             <div class="tech-text">
                 <p>Utilizamos programadoras de última geração que permitem trocar os componentes queimados do Face ID mantendo a criptografia original da Apple.</p>
-                <p style="margin-top: 1rem">Diferente de assistências comuns que apenas trocam peças (perdendo a função), nós reescrevemos o serial do componente. Seu desbloqueio facial volta a funcionar como novo.</p>
+                <p style="margin-top: 1rem">Diferente de assistências comuns que apenas trocam peças (perdendo a função), nós transferimos os dados de segurança criptografados para o novo componente. Seu desbloqueio facial volta a funcionar como novo com 100% de segurança.</p>
             </div>
             <div class="tech-img-container">
                 <img 
@@ -125,6 +124,10 @@
 
     <footer>
         <p>Smartboard Lab - Curitiba/PR</p>
+        
+        <p style="font-size: 0.8rem; margin-top: 20px; opacity: 0.7; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+            *Aviso Legal: A Smartboard Lab é um laboratório de microeletrônica independente. Não somos uma assistência técnica autorizada. Apple, iPhone e Face ID são marcas registradas da Apple Inc., utilizadas neste site apenas como referência descritiva de compatibilidade dos serviços prestados.
+        </p>
     </footer>
 </body>
 </html>
