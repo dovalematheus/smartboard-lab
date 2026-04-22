@@ -1,1 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W8ZQH2L2');</script>
+    <!-- End Google Tag Manager -->
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO e Meta Tags focadas em Hardware e Eletrônica (Safe for Google Ads) -->
+    <title>Laboratório de Eletrônica e Reparo de Placas em Curitiba | Smartboard Lab</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <meta name="description" content="Laboratório especializado em microsoldagem, diagnóstico avançado de hardware e reparo físico de componentes. Análise criteriosa e orçamento transparente.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '6845583908886955');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=6845583908886955&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        /* --- DESIGN SYSTEM & COLORS --- */
+        :root {
+            --primary-dark: #0F2B46; /* Azul Navy da marca */
+            --primary-darker: #0A1F33; /* Fundo escuro inspirado no concorrente */
+            --accent-teal: #34D399;  /* Verde Menta da marca */
+            --accent-hover: #10B981;
+            --text-light: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --bg-dark: #050E17;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        html { scroll-behavior: smooth; overflow-x: hidden; } 
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; } 
+        
+        /* --- UTILITIES --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .text-center { text-align: center; }
+        .section-padding { padding: 5rem 0; }
+        
+        /* --- BUTTONS --- */
+        .btn-primary {
+            background-color: var(--accent-teal);
+            color: var(--primary-dark);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(52, 211, 153, 0.3);
+        }
+
+        /* --- HEADER --- */
+        header {
+            background-color: rgba(10, 31, 51, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 2rem; max-width: 1200px; margin: 0 auto;
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 10px; }
+        .logo i { color: var(--accent-teal); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 90vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 8rem 2rem 4rem;
+            background: linear-gradient(180deg, rgba(5,14,23,0.8) 0%, var(--bg-dark) 100%), 
+                        url('conserto-placa-apple-gpu-curitiba-smartboard-lab.jpg') center/cover fixed;
+        }
+        .hero-content { max-width: 800px; z-index: 2; }
+        .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; color: #fff; }
+        .hero h1 span { color: var(--accent-teal); }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2.5rem; }
+
+        /* --- DUAL SERVICE SECTION (Inspired by competitor) --- */
+        .dual-services { background-color: #fff; color: var(--primary-dark); padding: 5rem 0; }
+        .dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+        .service-card {
+            background: var(--text-light);
+            border-radius: 20px; padding: 3rem 2rem;
+            text-align: center; transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: var(--accent-teal); }
+        .service-img-wrapper { height: 180px; margin-bottom: 2rem; border-radius: 10px; overflow: hidden; width: 100%; max-width: 300px; }
+        .service-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        .service-card h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .service-card p { color: #4b5563; margin-bottom: 2rem; flex-grow: 1; }
+
+        /* --- FEATURES (Por que escolher) --- */
+        .features { background-color: var(--bg-dark); padding: 6rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
+        .feature-box {
+            background: var(--primary-darker); padding: 2.5rem; border-radius: 15px;
+            text-align: center; border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+        .feature-box:hover { border-color: var(--accent-teal); }
+        .feature-icon {
+            width: 70px; height: 70px; background: rgba(52, 211, 153, 0.1);
+            color: var(--accent-teal); border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; font-size: 2rem;
+            margin: 0 auto 1.5rem;
+        }
+        .feature-box h4 { font-size: 1.2rem; margin-bottom: 1rem; color: #fff; }
+        .feature-box p { color: var(--text-muted); font-size: 0.95rem; }
+
+        /* --- GALLERY & EXPERTISE --- */
+        .expertise { background-color: var(--primary-darker); padding: 6rem 0; }
+        .gallery-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px; margin-top: 3rem;
+        }
+        .gallery-item {
+            position: relative; border-radius: 12px; overflow: hidden; height: 250px;
+            cursor: default;
+        }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.05); filter: brightness(0.6); }
+        .gallery-overlay {
+            position: absolute; bottom: -100%; left: 0; width: 100%; padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+            transition: 0.4s; display: flex; flex-direction: column; justify-content: flex-end;
+            height: 100%;
+        }
+        .gallery-item:hover .gallery-overlay { bottom: 0; }
+        .gallery-overlay span { color: var(--accent-teal); font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .gallery-overlay h5 { color: white; font-size: 1.1rem; }
+
+        /* --- STATS BAR --- */
+        .stats-bar {
+            background-color: var(--primary-dark);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .stats-container { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; }
+        .stat-item { text-align: center; }
+        .stat-num { display: block; font-size: 3rem; font-weight: 800; color: var(--accent-teal); line-height: 1; }
+        .stat-label { color: var(--text-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 0.5rem; display: block;}
+
+        /* --- FOOTER --- */
+        footer { background-color: var(--bg-dark); padding: 4rem 2rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
+        .footer-info p { color: var(--text-muted); margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .disclaimer { font-size: 0.75rem; color: #6b7280; max-width: 800px; margin: 2rem auto 0; line-height: 1.5; text-align: justify; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .dual-grid, .features-grid { grid-template-columns: 1fr; }
+            .stats-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8ZQH2L2"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <i class="fas fa-microchip"></i> Smartboard Lab
+            </div>
+            <!-- Botão otimizado para clique rápido -->
+            <a href="https://wa.me/5541974037270?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20uma%20análise%20técnica." target="_blank" class="btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;" onclick="dataLayer.push({'event': 'whatsapp_click', 'local': 'header'}); fbq('track', 'Contact');">
+                <i class="fab fa-whatsapp"></i> Falar com Técnico
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Laboratório de <span>Eletrônica Avançada</span> e Microsoldagem</h1>
+            <p>Diagnóstico técnico exato e reparo de hardware complexo. Engenharia aplicada para fazer sua placa voltar a ligar.</p>
+            <a href="https://wa.me/5541974037270?text=Olá,%20preciso%20de%20um%20diagnóstico%20físico%20para%20meu%20equipamento." target="_blank" class="btn-primary" onclick="dataLayer.push({'event': 'whatsapp_click', 'local': 'hero'}); fbq('track', 'Lead');">
+                <i class="fab fa-whatsapp"></i> Solicitar Análise Criteriosa
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção de divisão de atendimento inspirada no concorrente (Safe for Google Ads) -->
+    <section class="dual-services">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">O que precisa de análise em nosso laboratório?</h2>
+                <p style="color: #6b7280;">Especialistas em diagnóstico de componentes e circuitos de alta densidade.</p>
+            </div>
+
+            <div class="dual-grid">
+                <!-- Card 1 -->
+                <div class="service-card" data-aos="fade-right">
+                    <div class="service-img-wrapper">
+                        <!-- Imagem do reparo de placa (substituindo menção a marca específica) -->
+                        <img src="troca-vidro-iphone-14-pro-max-original-curitiba.jpeg" alt="Reparo físico em smartphones premium">
+                    </div>
+                    <h3>Smartphones Premium</h3>
+                    <p>Análise de hardware para equipamentos que não iniciam, falhas na placa lógica principal, reparo de componentes ópticos e substituição estrutural a laser com acabamento microscópico.</p>
+                    <a href="https://wa.me/5541974037270?text=Olá,%20preciso%20avaliar%20meu%20smartphone." target="_blank" class="btn-primary" style="width: 100%; justify-content: center;" onclick="dataLayer.push({'event': 'whatsapp_click', 'local': 'card_smartphone'}); fbq('track', 'Contact');">
+                        Agendar Diagnóstico
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card" data-aos="fade-left">
+                    <div class="service-img-wrapper">
+                        <!-- Imagem do microscópio em notebooks -->
+                        <img src="conserto-macbook-pro-nao-liga-recuperacao-placa.jpg" alt="Laboratório de análise de notebooks">
+                    </div>
+                    <h3>Notebooks de Alta Performance</h3>
+                    <p>Mapeamento térmico e elétrico de placas. Resolução de curtos-circuitos em linhas de alimentação primária, substituição de CIs controladores e reativação do circuito de carga.</p>
+                    <a href="https://wa.me/5541974037270?text=Olá,%20preciso%20avaliar%20meu%20notebook." target="_blank" class="btn-primary" style="width: 100%; justify-content: center;" onclick="dataLayer.push({'event': 'whatsapp_click', 'local': 'card_notebook'}); fbq('track', 'Contact');">
+                        Agendar Diagnóstico
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <h2 style="font-size: 2.5rem; color: #fff;">Por que escolher nosso Laboratório?</h2>
+                <p style="color: var(--accent-teal);">Estrutura física completa e engenharia dedicada.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon"><i class="fas fa-microscope"></i></div>
+                    <h4>Diagnóstico Exato</h4>
+                    <p>Utilizamos osciloscópios, câmeras térmicas e esquemas elétricos precisos para localizar a falha a nível de componente.</p>
+                </div>
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h4>Orçamento Transparente</h4>
+                    <p>Sem surpresas. Você recebe um laudo técnico detalhando qual circuito falhou antes de aprovar qualquer reparo.</p>
+                </div>
+                <div class="feature-box" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon"><i class="fas fa-microchip"></i></div>
+                    <h4>Microsoldagem Avançada</h4>
+                    <p>Capacidade técnica para reconstruir trilhas rompidas e substituir circuitos integrados (BGA, QFN) com alto índice de reparo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stats-bar">
+        <div class="container stats-container">
+            <div class="stat-item" data-aos="zoom-in">
+                <span class="stat-num">+5k</span>
+                <span class="stat-label">Equipamentos Analisados</span>
+            </div>
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                <span class="stat-num"><i class="fas fa-chart-line"></i></span>
+                <span class="stat-label">Alto Índice de Reparo</span>
+            </div>
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                <span class="stat-num"><i class="fas fa-shield-alt"></i></span>
+                <span class="stat-label">Diagnóstico Preciso</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Galeria de Serviços Físicos - Evitando jargões de software -->
+    <section class="expertise">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <h2 style="font-size: 2.2rem; color: #fff; margin-bottom: 1rem;">Nossa Rotina de Laboratório</h2>
+                <p style="color: var(--text-muted);">Transparência total nos processos de engenharia física.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Imagem: Osciloscópio -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="analise-avancada-circuito-iphone-osciloscopio-curitiba.jpg" alt="Análise de Sinais Elétricos com Osciloscópio">
+                    <div class="gallery-overlay">
+                        <span>Instrumentação</span>
+                        <h5>Análise de Sinais e Frequência</h5>
+                    </div>
+                </div>
+
+                <!-- Imagem: Chip CD3217 -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="ci-cd3217b13-controlador-usb-c-macbook.jpg" alt="Substituição de Circuito Integrado">
+                    <div class="gallery-overlay">
+                        <span>Microsoldagem</span>
+                        <h5>Substituição de CIs Controladores</h5>
+                    </div>
+                </div>
+
+                <!-- Imagem: Vidro Traseiro Laser -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="troca-vidro-traseiro-iphone-14-pro-laser-curitiba.jpg" alt="Reparo Estrutural a Laser">
+                    <div class="gallery-overlay">
+                        <span>Equipamento CNC/Laser</span>
+                        <h5>Reparo Físico Estrutural</h5>
+                    </div>
+                </div>
+
+                <!-- Imagem: Reparo Sensores (FaceID image used safely) -->
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                    <img src="conserto-face-id-iphone-jcid-recuperacao-truedepth-curitiba.jpeg" alt="Calibração de Sensores Biométricos">
+                    <div class="gallery-overlay">
+                        <span>Óptica e Sensores</span>
+                        <h5>Restauração de Matrizes Biométricas</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 4rem;" data-aos="fade-up">
+                <a href="https://wa.me/5541974037270?text=Olá,%20gostaria%20de%20avaliar%20a%20viabilidade%20de%20reparo%20da%20minha%20placa." target="_blank" class="btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;" onclick="dataLayer.push({'event': 'whatsapp_click', 'local': 'footer'}); fbq('track', 'Lead');">
+                    Falar com Laboratório Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-info">
+            <h2 style="color: #fff; margin-bottom: 1rem;"><i class="fas fa-microchip" style="color: var(--accent-teal);"></i> Smartboard Lab</h2>
+            <p style="font-weight: bold; color: var(--text-light);">SMARTBOARD LAB TECNOLOGIA E SOLUCOES ELETRONICAS LTDA</p>
+            <p>CNPJ: 65.516.191/0001-94</p>
+            <p>Rua Engenheiro Costa Barros, 805, Loja 05 - Cajuru - Curitiba/PR - CEP: 82.950-420</p>
+            
+            <!-- Mapa do Google incorporado -->
+            <div style="margin: 30px auto; max-width: 800px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.5); opacity: 0.9;">
+                <iframe 
+                    width="100%" 
+                    height="300" 
+                    frameborder="0" 
+                    style="border:0; display:block;" 
+                    src="https://maps.google.com/maps?q=Rua%20Engenheiro%20Costa%20Barros,%20805,%20Cajuru,%20Curitiba&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p class="disclaimer">
+                *Aviso: A Smartboard Lab é um laboratório de engenharia eletrônica independente, focado estritamente em reparo de hardware, microsoldagem e análises de circuitos elétricos. Este site destina-se à captação de diagnósticos físicos de placas lógicas inoperantes. Não comercializamos softwares, serviços de sistema operacional ou recuperação de dados de contas bloqueadas. Nosso índice de reparo baseia-se em análises técnicas, sujeitas à viabilidade elétrica de cada componente.
+            </p>
+
+            <div style="margin-top: 2rem; font-size: 0.8rem; color: #4b5563;">
+                © 2026 Smartboard Lab - Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 50
+      });
+    </script>
+</body>
+</html>
