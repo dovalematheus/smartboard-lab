@@ -100,84 +100,38 @@
     }
     </script>
     <style>
-        /* --- CONFIGURAÇÕES GERAIS --- */
         :root {
-            --primary-dark: #0F2B46; /* Azul Navy */
-            --accent-teal: #34D399;  /* Verde Menta */
+            --primary-dark: #0F2B46;
+            --accent-teal: #34D399;
             --text-dark: #1F2937;
             --bg-light: #F9FAFB;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
         html { scroll-behavior: smooth; overflow-x: hidden; } 
         body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
         a { text-decoration: none; color: inherit; } 
         ul { list-style: none; }
 
-        /* --- NAVBAR --- */
-        header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-            position: fixed; width: 100%; top: 0; z-index: 1000;
-        }
-
-        .navbar {
-            max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-
-        .logo { 
-            font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); 
-            display: flex; align-items: center; gap: 10px; z-index: 1001; 
-        }
+        header { background-color: #ffffff; box-shadow: 0 2px 15px rgba(0,0,0,0.08); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .navbar { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); display: flex; align-items: center; gap: 10px; z-index: 1001; }
         .logo i { color: var(--accent-teal); }
-
         .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a { color: var(--primary-dark); font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent-teal); }
 
-        .btn-cta {
-            background-color: var(--primary-dark); color: white;
-            padding: 0.6rem 1.5rem; border-radius: 50px; transition: 0.3s;
-            font-weight: 600; display: inline-block;
-        }
+        .btn-cta { background-color: var(--primary-dark); color: white; padding: 0.6rem 1.5rem; border-radius: 50px; transition: 0.3s; font-weight: 600; display: inline-block; }
         .btn-cta:hover { background-color: var(--accent-teal); color: var(--primary-dark); }
-
         .mobile-toggle { display: none; font-size: 1.5rem; color: var(--primary-dark); cursor: pointer; z-index: 1001; }
         .mobile-only-link { display: none; }
 
-        /* --- HERO --- */
-        .hero {
-            height: 90vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            text-align: center; 
-            position: relative; 
-            padding: 0 2rem; 
-            margin-top: 60px; 
-            background-color: var(--primary-dark);
-            background-image: linear-gradient(135deg, rgba(15, 43, 70, 0.90), rgba(15, 43, 70, 0.80)), 
-                              url('conserto-placa-apple-gpu-curitiba-smartboard-lab.jpg');
-            background-size: cover; 
-            background-position: center center; 
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
+        .hero { height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 0 2rem; margin-top: 60px; background-color: var(--primary-dark); background-image: linear-gradient(135deg, rgba(15, 43, 70, 0.90), rgba(15, 43, 70, 0.80)), url('conserto-placa-apple-gpu-curitiba-smartboard-lab.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed; }
         .hero-content { color: white; max-width: 800px; z-index: 2; }
-        
         .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; line-height: 1.2; }
         .hero p { font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.95; }
-        
-        .hero .btn-hero {
-            background-color: var(--accent-teal); color: var(--primary-dark);
-            padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: bold;
-            border-radius: 50px; border: none; cursor: pointer; transition: transform 0.2s;
-        }
+        .hero .btn-hero { background-color: var(--accent-teal); color: var(--primary-dark); padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: bold; border-radius: 50px; border: none; cursor: pointer; transition: transform 0.2s; }
         .hero .btn-hero:hover { transform: scale(1.05); background-color: white; }
 
-        /* --- ABOUT --- */
         .about { padding: 6rem 2rem; background: white; border-bottom: 1px solid #eee; overflow: hidden; }
         .about-container { max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 3rem; }
         .about-text { flex: 1; min-width: 300px; }
@@ -186,81 +140,40 @@
         .stat-box { background: var(--bg-light); padding: 2rem; border-radius: 12px; text-align: center; min-width: 140px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .stat-number { display: block; font-size: 2.5rem; font-weight: 800; color: #0284c7; }
 
-        /* --- SERVICES --- */
         .services { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; text-align: center; }
         .section-title { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 1rem; }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem; }
-        
         .service-link { display: block; transition: 0.3s; text-decoration: none; }
-        .card {
-            background: white; padding: 2.5rem 2rem; border-radius: 15px; height: 100%;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s;
-            border-top: 4px solid var(--accent-teal); display: flex; flex-direction: column; align-items: center;
-        }
+        .card { background: white; padding: 2.5rem 2rem; border-radius: 15px; height: 100%; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s; border-top: 4px solid var(--accent-teal); display: flex; flex-direction: column; align-items: center; }
         .service-link:hover .card { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
         .card-icon { font-size: 2.5rem; color: var(--accent-teal); margin-bottom: 1.5rem; }
         .card h3 { color: var(--primary-dark); margin-bottom: 10px; }
         .card p { color: #666; font-size: 0.95rem; }
         .card-btn { margin-top: auto; color: var(--accent-teal); font-weight: bold; padding-top: 15px; font-size: 0.9rem; }
 
-        /* --- TECH TAGS --- */
         .tech-tags-section { background-color: #f1f5f9; padding: 3rem 2rem; text-align: center; border-top: 1px solid #e5e7eb; }
         .tech-tags-container { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-        .tech-tag {
-            background: white; color: #555; padding: 6px 14px; border-radius: 20px;
-            font-size: 0.85rem; border: 1px solid #ddd; cursor: default;
-        }
+        .tech-tag { background: white; color: #555; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; border: 1px solid #ddd; cursor: default; }
 
-        /* --- FAQ SECTION --- */
         .faq-section { padding: 5rem 2rem; background: white; max-width: 1000px; margin: 0 auto; border-top: 1px solid #eee;}
         .faq-container { margin-top: 3rem; display: flex; flex-direction: column; gap: 1rem; }
-        .faq-item { 
-            border: 1px solid #e5e7eb; 
-            border-radius: 10px; 
-            overflow: hidden;
-            background: var(--bg-light);
-            transition: all 0.3s ease;
-        }
+        .faq-item { border: 1px solid #e5e7eb; border-radius: 10px; overflow: hidden; background: var(--bg-light); transition: all 0.3s ease; }
         .faq-item:hover { border-color: var(--accent-teal); }
-        .faq-question {
-            width: 100%; text-align: left; padding: 1.5rem;
-            background: none; border: none; cursor: pointer;
-            display: flex; justify-content: space-between; align-items: center;
-            font-size: 1.1rem; font-weight: 600; color: var(--primary-dark);
-            transition: color 0.3s;
-        }
-        .faq-question i {
-            color: var(--accent-teal);
-            transition: transform 0.3s ease;
-        }
+        .faq-question { width: 100%; text-align: left; padding: 1.5rem; background: none; border: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 600; color: var(--primary-dark); transition: color 0.3s; }
+        .faq-question i { color: var(--accent-teal); transition: transform 0.3s ease; }
         .faq-question.active i { transform: rotate(180deg); }
-        .faq-answer {
-            max-height: 0; overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
-            background: white;
-        }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; background: white; }
         .faq-answer p { padding: 0 1.5rem; color: #555; font-size: 1rem; line-height: 1.6; }
         .faq-answer.active { max-height: 500px; padding-bottom: 1.5rem; } 
 
-        /* --- FOOTER --- */
         footer { background-color: #0a1f33; color: white; padding: 4rem 2rem; text-align: center; }
 
-        /* --- RESPONSIVIDADE --- */
         @media (max-width: 768px) {
             .mobile-toggle { display: block; }
             .navbar .btn-cta { display: none; }
             .mobile-only-link { display: block; margin-top: 10px; }
             .mobile-only-link .btn-cta { display: inline-block; width: 100%; text-align: center; }
-
-            .nav-links {
-                position: fixed; top: 0; right: -100%;
-                height: 100vh; width: 75%; background: white;
-                flex-direction: column; padding-top: 5rem;
-                padding-left: 2rem; padding-right: 2rem;
-                align-items: flex-start;
-                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-                transition: 0.3s ease-in-out;
-            }
+            .nav-links { position: fixed; top: 0; right: -100%; height: 100vh; width: 75%; background: white; flex-direction: column; padding-top: 5rem; padding-left: 2rem; padding-right: 2rem; align-items: flex-start; box-shadow: -5px 0 15px rgba(0,0,0,0.1); transition: 0.3s ease-in-out; }
             .nav-links.active { right: 0; }
             .hero h1 { font-size: 2.5rem; }
             .hero { background-attachment: scroll !important; background-position: center top !important; }
@@ -409,49 +322,42 @@
         <p style="text-align:center; color:#666; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">Dúvidas comuns sobre os reparos na Smartboard Lab</p>
         
         <div class="faq-container" data-aos="fade-up" data-aos-delay="200">
-            
             <div class="faq-item">
                 <button class="faq-question">Quais tipos de placas a Smartboard Lab conserta em Curitiba? <i class="fas fa-chevron-down"></i></button>
                 <div class="faq-answer">
                     <p>A Smartboard Lab é especialista em microsoldagem avançada para placas de iPhone, MacBook e Placas de Vídeo (GPU). Resolvemos curtos totais, falhas de inicialização, erros como 4013, e problemas de alimentação (como curto 12V PCIe em GPUs).</p>
                 </div>
             </div>
-
             <div class="faq-item">
                 <button class="faq-question">O conserto do Face ID perde a função original? <i class="fas fa-chevron-down"></i></button>
                 <div class="faq-answer">
                     <p>Não. Utilizamos técnicas avançadas para reparar o módulo do Face ID (corrigindo mensagens como 'Mova para cima/baixo' ou 'Face ID indisponível') mantendo todos os componentes de segurança originais do seu iPhone funcionando perfeitamente.</p>
                 </div>
             </div>
-
             <div class="faq-item">
                 <button class="faq-question">Como funciona a troca do vidro traseiro de iPhone a laser? <i class="fas fa-chevron-down"></i></button>
                 <div class="faq-answer">
                     <p>Utilizamos uma máquina a laser de alta precisão que remove a cola original do vidro quebrado sem a necessidade de abrir o aparelho ou aquecê-lo excessivamente. Isso garante um acabamento 100% original e protege os componentes internos.</p>
                 </div>
             </div>
-
             <div class="faq-item">
                 <button class="faq-question">Qual a diferença entre trocar a tela e trocar apenas o vidro do iPhone? <i class="fas fa-chevron-down"></i></button>
                 <div class="faq-answer">
                     <p>Se o seu display ainda dá imagem perfeitamente e o touch funciona, mas o vidro está trincado, nós trocamos apenas o vidro. Isso custa muito menos do que uma tela nova e mantém a originalidade do display (cores e sensibilidade originais da Apple).</p>
                 </div>
             </div>
-
             <div class="faq-item">
                 <button class="faq-question">Meu iPhone não liga mais. É possível recuperar as fotos e dados? <i class="fas fa-chevron-down"></i></button>
                 <div class="faq-answer">
                     <p>Sim! Somos especialistas em recuperação avançada de dados em nível de placa. Mesmo em aparelhos mortos, molhados ou severamente danificados, fazemos o reparo da placa focado exclusivamente em fazer o aparelho ligar temporariamente para extrair seus dados com segurança.</p>
                 </div>
             </div>
-
             <div class="faq-item">
                 <button class="faq-question">A Smartboard Lab faz Reballing em Placas de Vídeo (GPU)? <i class="fas fa-chevron-down"></i></button>
                 <div class="faq-answer">
                     <p>Sim. Realizamos diagnósticos precisos em GPUs, incluindo reballing de chip gráfico, troca de memórias VRAM e reparo nos circuitos de alimentação (VRM), resolvendo artefatos na tela ou placas que não dão vídeo.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -486,6 +392,20 @@
             </iframe>
         </div>
 
+        <!-- MALHA SEO: ARQUITETURA EM SILO (LINKS DOS HUBS) -->
+        <div style="margin: 25px auto; max-width: 800px; padding: 15px; background-color: rgba(255,255,255,0.05); border-radius: 8px;">
+            <p style="font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; color: var(--accent-teal);">Nossas Especialidades Diretas</p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; font-size: 0.85rem;">
+                <a href="reparo-placa-iphone/" style="color: #cbd5e1; transition: 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#cbd5e1'">Reparo de Placa</a> |
+                <a href="reparo-face-id/" style="color: #cbd5e1; transition: 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#cbd5e1'">Reparo de Face ID</a> |
+                <a href="reparo-macbook/" style="color: #cbd5e1; transition: 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#cbd5e1'">Assistência MacBook</a> |
+                <a href="troca-vidro-iphone/" style="color: #cbd5e1; transition: 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#cbd5e1'">Troca de Vidro Frontal</a> |
+                <a href="troca-vidro-traseiro/" style="color: #cbd5e1; transition: 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#cbd5e1'">Vidro Traseiro a Laser</a> |
+                <a href="recuperacao-dados/" style="color: #cbd5e1; transition: 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#cbd5e1'">Recuperação de Dados Apple</a>
+            </div>
+        </div>
+        <!-- FIM MALHA SEO -->
+
         <p style="font-size: 0.8rem; margin-top: 25px; opacity: 0.7; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.4;">
             *Aviso Legal: A Smartboard Lab é um laboratório de microeletrônica independente. Não somos uma assistência técnica autorizada. Apple, iPhone, MacBook e Face ID são marcas registradas da Apple Inc., utilizadas neste site apenas como referência descritiva de compatibilidade dos serviços prestados.
         </p>
@@ -505,11 +425,9 @@
                 const answer = button.nextElementSibling;
                 const isActive = button.classList.contains('active');
 
-                // Fecha todos os outros itens
                 document.querySelectorAll('.faq-question').forEach(btn => btn.classList.remove('active'));
                 document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.remove('active'));
 
-                // Abre o item clicado se ele não estava ativo
                 if (!isActive) {
                     button.classList.add('active');
                     answer.classList.add('active');
