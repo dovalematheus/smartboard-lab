@@ -5,3 +5,5 @@ auditoria.js
 data_backup.json
 limpeza.js
 completar_telas.js
+gerador_placas.js
+injetar_placas.js
