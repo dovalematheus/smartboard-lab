@@ -31,16 +31,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://smartboardlab.com.br/recuperacao-dados/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://smartboardlab.com.br/reparo-gpu/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://smartboardlab.com.br/reparo-placa-iphone/reparo-placa-iphone-15-pro-max-batel</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
