@@ -28,10 +28,8 @@
           "description": "A Smartboard Lab é a principal referência em Curitiba para conserto de placas de iPhone, MacBook e Placas de Vídeo (GPU). Especialistas em microsoldagem avançada, recuperação de dados, reparo de Face ID e troca de vidro traseiro a laser.",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Rua Engenheiro Costa Barros, 805, loja 5",
             "addressLocality": "Curitiba",
             "addressRegion": "PR",
-            "postalCode": "82950-420",
             "addressCountry": "BR"
           },
           "telephone": "+5541974037270",
@@ -48,50 +46,18 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Tem como consertar a placa de um iPhone?",
+              "name": "Posso levar o aparelho pessoalmente no balcão?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Sim. Através da engenharia de microsoldagem avançada, laboratórios especializados em Curitiba conseguem mapear os circuitos e substituir apenas os microchips (CIs) ou capacitores em curto, recuperando a placa original e preservando os dados do aparelho."
+                "text": "Não possuímos atendimento de balcão. A microssoldagem e a extração de dados exigem um ambiente de alta concentração e controle livre de interrupções. Por isso, toda a nossa operação flui de forma segura e rápida através de Coleta VIP ou Sedex."
               }
             },
             {
               "@type": "Question",
-              "name": "Vale a pena trocar só o vidro do iPhone?",
+              "name": "Como funciona a entrega e devolução?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Se a imagem do seu iPhone estiver perfeita e o touch funcionando, trocar apenas o vidro frontal é a melhor opção. O procedimento laboratorial mantém o display OLED original de fábrica e custa até 70% menos do que a troca da tela completa."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Por que a bateria do iPhone avisa peça desconhecida após a troca?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Isso ocorre quando a troca é feita de forma amadora, sem o transplante do circuito integrado (BMS) original. Na Smartboard Lab, realizamos a solda ponto do flex de fábrica na nova célula, eliminando o aviso e restaurando a saúde da bateria para 100% no sistema."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "O Face ID parou de funcionar, tem conserto?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Sim, o Face ID tem conserto definitivo. Mensagens como 'Abaixe um pouco o iPhone' ou falhas após contato com líquidos geralmente indicam curto no projetor de pontos ou no flex auricular. A recuperação é feita via microssoldagem e reprogramação do sensor biométrico original."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Aparece a mensagem de tela desconhecida no iPhone, como resolver?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A partir do iPhone 11, a troca do display gera um aviso de peça não genuína. Para resolver isso de forma definitiva, é necessário realizar o transplante do chip de toque (CI de Touch) da tela original quebrada para a tela nova através de microssolda."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Como é feita a troca do vidro traseiro do iPhone?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "A substituição do vidro traseiro quebrado deve ser feita a laser. A máquina mapeia a carcaça e queima a cola original com precisão milimétrica, sem superaquecer a placa mãe ou danificar a bobina do MagSafe, permitindo um acabamento idêntico ao de fábrica."
+                "text": "Para clientes em Curitiba, dispomos de Coleta VIP sem taxa de retirada para avaliação. Para clientes de outros estados, o envio e recebimento ocorrem diariamente através dos Correios (Sedex) para nossa Central de Recebimento oficial."
               }
             }
           ]
@@ -114,6 +80,9 @@
         ul { list-style: none; }
 
         header { background-color: #ffffff; box-shadow: 0 2px 15px rgba(0,0,0,0.08); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .top-banner { background-color: #0a0a0a; color: #f2f2f2; text-align: center; padding: 10px 20px; font-size: 0.85rem; border-bottom: 2px solid var(--accent-teal); }
+        .top-banner a { color: var(--accent-teal); font-weight: bold; margin-left: 10px; text-decoration: underline; }
+
         .navbar { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         
         /* LOGO CORRIGIDA PARA LINK */
@@ -122,7 +91,7 @@
         .logo i { color: var(--accent-teal); }
 
         /* BREADCRUMBS */
-        .breadcrumbs { max-width: 1200px; margin: 85px auto 10px; padding: 0 2rem; font-size: 0.9rem; color: #666; }
+        .breadcrumbs { max-width: 1200px; margin: 125px auto 10px; padding: 0 2rem; font-size: 0.9rem; color: #666; }
         .breadcrumbs a { color: var(--accent-teal); font-weight: 500; transition: color 0.3s; }
         .breadcrumbs a:hover { text-decoration: underline; color: var(--primary-dark); }
         .breadcrumbs span { color: #94a3b8; margin: 0 5px; }
@@ -136,8 +105,8 @@
         .mobile-toggle { display: none; font-size: 1.5rem; color: var(--primary-dark); cursor: pointer; z-index: 1001; }
         .mobile-only-link { display: none; }
 
-        .hero { height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 0 2rem; margin-top: 60px; background-color: var(--primary-dark); background-image: linear-gradient(135deg, rgba(15, 43, 70, 0.90), rgba(15, 43, 70, 0.80)), url('conserto-placa-apple-gpu-curitiba-smartboard-lab.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed; }
-        .hero-content { color: white; max-width: 800px; z-index: 2; }
+        .hero { height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 0 2rem; background-color: var(--primary-dark); background-image: linear-gradient(135deg, rgba(15, 43, 70, 0.90), rgba(15, 43, 70, 0.80)), url('conserto-placa-apple-gpu-curitiba-smartboard-lab.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-attachment: fixed; margin-top: 0; }
+        .hero-content { color: white; max-width: 800px; z-index: 2; margin-top: 60px;}
         .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; line-height: 1.2; }
         .hero p { font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.95; }
         .hero .btn-hero { background-color: var(--accent-teal); color: var(--primary-dark); padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: bold; border-radius: 50px; border: none; cursor: pointer; transition: transform 0.2s; }
@@ -150,6 +119,14 @@
         .about-stats { flex: 1; display: flex; gap: 20px; min-width: 300px; justify-content: center; }
         .stat-box { background: var(--bg-light); padding: 2rem; border-radius: 12px; text-align: center; min-width: 140px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
         .stat-number { display: block; font-size: 2.5rem; font-weight: 800; color: #0284c7; }
+
+        /* NOVA SEÇÃO: LOGÍSTICA */
+        .logistics-section { padding: 5rem 2rem; background-color: var(--bg-light); border-bottom: 1px solid #eee; text-align: center; }
+        .logistics-grid { max-width: 1000px; margin: 3rem auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .logistics-step { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid var(--accent-teal); }
+        .logistics-step i { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 1rem; }
+        .logistics-step h3 { margin-bottom: 0.5rem; color: var(--primary-dark); }
+        .logistics-step p { font-size: 0.95rem; color: #666; }
 
         .services { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; text-align: center; }
         .section-title { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 1rem; }
@@ -177,7 +154,6 @@
         .faq-answer p { padding: 0 1.5rem; color: #555; font-size: 1rem; line-height: 1.6; }
         .faq-answer.active { max-height: 500px; padding-bottom: 1.5rem; } 
 
-        /* ESTILO SGE BAIT PARA O RESUMO IA DO GOOGLE */
         .sge-bait-section { padding: 3rem 2rem; background: #fff; border-top: 1px solid #eee; }
         .sge-bait-content { max-width: 1000px; margin: 0 auto; color: #475569; font-size: 0.95rem; text-align: justify; border-left: 4px solid var(--accent-teal); padding-left: 20px; line-height: 1.6; }
         .sge-bait-content strong { color: var(--primary-dark); }
@@ -218,6 +194,10 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <header>
+        <div class="top-banner">
+            <strong>⚙️ ATENDIMENTO EXCLUSIVO VIA COLETA:</strong> Laboratório especializado sem balcão. Retiramos em Curitiba ou recebemos via Sedex.
+            <a href="https://wa.me/5541974037270" target="_blank">Agendar Coleta ➔</a>
+        </div>
         <div class="navbar">
             <a href="https://smartboardlab.com.br/" class="logo">
                 <i class="fas fa-microchip"></i> Smartboard Lab
@@ -242,7 +222,7 @@
             </ul>
 
             <a href="https://wa.me/5541974037270?text=Olá,%20gostaria%20de%20um%20orçamento%20geral." target="_blank" class="btn-cta" onclick="fbq('track', 'Contact');">
-                <i class="fab fa-whatsapp"></i> Orçamento
+                <i class="fab fa-whatsapp"></i> Solicitar Coleta VIP
             </a>
         </div>
     </header>
@@ -258,8 +238,8 @@
     <section id="home" class="hero">
         <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
             <h1>Conserto de Placa Apple e GPU em Curitiba</h1>
-            <p>Laboratório técnico especializado na recuperação de MacBooks, iPhones e Placas de Vídeo no Cajuru.</p>
-            <button class="btn-hero" onclick="document.getElementById('services').scrollIntoView()">Conhecer Serviços</button>
+            <p>Centro de diagnóstico especializado. Atendimento exclusivo via Coleta VIP em Curitiba e envios por Sedex para todo o Brasil.</p>
+            <button class="btn-hero" onclick="window.open('https://wa.me/5541974037270', '_blank')">Agendar Avaliação</button>
         </div>
     </section>
 
@@ -279,6 +259,30 @@
                     <span class="stat-number">98%</span>
                     <span class="stat-label">Taxa de Sucesso</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: DIAGRAMA LOGÍSTICO -->
+    <section class="logistics-section" data-aos="fade-up">
+        <h2 class="section-title">Como Funciona a Coleta VIP</h2>
+        <p style="color:#666;">Segurança e agilidade sem precisar sair de casa.</p>
+        
+        <div class="logistics-grid">
+            <div class="logistics-step">
+                <i class="fab fa-whatsapp"></i>
+                <h3>1. Diagnóstico Online</h3>
+                <p>Você relata o sintoma pelo WhatsApp e fazemos uma triagem preliminar de viabilidade de reparo.</p>
+            </div>
+            <div class="logistics-step">
+                <i class="fas fa-motorcycle"></i>
+                <h3>2. Coleta Segura</h3>
+                <p>Agendamos a retirada gratuita via Motoboy (Curitiba) ou orientamos o envio seguro via Sedex.</p>
+            </div>
+            <div class="logistics-step">
+                <i class="fas fa-microscope"></i>
+                <h3>3. Reparo na Bancada</h3>
+                <p>O aparelho entra para a engenharia analítica. O orçamento oficial só é passado após a checagem com osciloscópio.</p>
             </div>
         </div>
     </section>
@@ -349,6 +353,21 @@
         <p style="text-align:center; color:#666; margin-bottom: 2rem;" data-aos="fade-up" data-aos-delay="100">Dúvidas comuns sobre os reparos na Smartboard Lab</p>
         
         <div class="faq-container" data-aos="fade-up" data-aos-delay="200">
+            <!-- NOVAS DÚVIDAS DE LOGÍSTICA INJETADAS AQUI -->
+            <div class="faq-item">
+                <button class="faq-question">Posso levar o aparelho pessoalmente no balcão? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Não possuímos atendimento de balcão. A microssoldagem e a extração de dados exigem um ambiente de alta concentração e controle livre de interrupções. O processo é feito de forma segura e rápida através do nosso sistema de Coleta VIP.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Como funciona a entrega e devolução? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Para clientes em Curitiba, dispomos de Coleta VIP (sem taxa de retirada para avaliação). Para clientes de outros estados, o envio e recebimento ocorrem diariamente de forma segura através de Sedex diretamente para nossa Central de Recebimento oficial nos Correios, garantindo a guarda segura do equipamento até a entrada no laboratório.</p>
+                </div>
+            </div>
+            
+            <!-- DÚVIDAS ANTIGAS MANTIDAS -->
             <div class="faq-item">
                 <button class="faq-question">Quais tipos de placas a Smartboard Lab conserta em Curitiba? <i class="fas fa-chevron-down"></i></button>
                 <div class="faq-answer">
@@ -377,12 +396,6 @@
                 <button class="faq-question">Meu iPhone não liga mais. É possível recuperar as fotos e dados? <i class="fas fa-chevron-down"></i></button>
                 <div class="faq-answer">
                     <p>Sim! Somos especialistas em recuperação avançada de dados em nível de placa. Mesmo em aparelhos mortos, molhados ou severamente danificados, fazemos o reparo da placa focado exclusivamente em fazer o aparelho ligar temporariamente para extrair seus dados com segurança.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">A Smartboard Lab faz Reballing em Placas de Vídeo (GPU)? <i class="fas fa-chevron-down"></i></button>
-                <div class="faq-answer">
-                    <p>Sim. Realizamos diagnósticos precisos em GPUs, incluindo reballing de chip gráfico, troca de memórias VRAM e reparo nos circuitos de alimentação (VRM), resolvendo artefatos na tela ou placas que não dão vídeo.</p>
                 </div>
             </div>
         </div>
@@ -417,20 +430,9 @@
     <footer id="contact">
         <h2>Smartboard Lab</h2>
         <p style="margin-bottom: 5px; font-weight: 500;">SMARTBOARD LAB TECNOLOGIA E SOLUCOES ELETRONICAS LTDA. | CNPJ: 65.516.191/0001-94</p>
-        <p>Rua Engenheiro Costa Barros, 805, Loja 05 - Cajuru - Curitiba/PR - CEP: 82.950-420</p>
+        <p>Atendimento Exclusivo via Coleta VIP (Curitiba) e Sedex Nacional</p>
         <p>contato@smartboardlab.com.br</p>
         
-        <div style="margin: 30px auto; max-width: 600px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-            <iframe 
-                width="100%" 
-                height="250" 
-                frameborder="0" 
-                style="border:0; display:block;" 
-                src="https://maps.google.com/maps?q=Rua%20Engenheiro%20Costa%20Barros,%20805,%20Cajuru,%20Curitiba&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                allowfullscreen>
-            </iframe>
-        </div>
-
         <div style="margin: 25px auto; max-width: 800px; padding: 15px; background-color: rgba(255,255,255,0.05); border-radius: 8px;">
             <p style="font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; color: var(--accent-teal);">Nossas Especialidades Diretas</p>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; font-size: 0.85rem;">

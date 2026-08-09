@@ -26,10 +26,8 @@
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Rua Engenheiro Costa Barros, 805, Loja 05",
         "addressLocality": "Curitiba",
         "addressRegion": "PR",
-        "postalCode": "82.950-420",
         "addressCountry": "BR"
       }
     }]
@@ -60,13 +58,16 @@
         .btn-primary:hover { background-color: var(--accent-hover); transform: translateY(-3px); }
 
         header { background-color: rgba(10, 31, 51, 0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .top-banner { background-color: #0a0a0a; color: #f2f2f2; text-align: center; padding: 10px 20px; font-size: 0.85rem; border-bottom: 2px solid #eab308; }
+        .top-banner a { color: #eab308; font-weight: bold; margin-left: 10px; text-decoration: underline; }
+        
         .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1200px; margin: 0 auto; }
         
         .logo { font-size: 1.5rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 10px; cursor: pointer; text-decoration: none; transition: opacity 0.3s; }
         .logo:hover { opacity: 0.8; }
         .logo i { color: var(--accent-teal); }
 
-        .breadcrumbs { padding-top: 100px; font-size: 0.85rem; color: var(--text-muted); }
+        .breadcrumbs { padding-top: 140px; font-size: 0.85rem; color: var(--text-muted); }
         .breadcrumbs a { color: var(--accent-teal); transition: color 0.3s; }
         .breadcrumbs a:hover { color: #fff; text-decoration: underline; }
 
@@ -136,13 +137,18 @@
 <body>
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8ZQH2L2"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
     <header>
+        <div class="top-banner">
+            <strong>⚙️ ATENDIMENTO EXCLUSIVO VIA COLETA:</strong> Laboratório especializado sem balcão. Retiramos em Curitiba ou recebemos via Sedex.
+            <a href="https://wa.me/5541974037270" target="_blank">Agendar Avaliação ➔</a>
+        </div>
         <div class="navbar">
             <a href="https://smartboardlab.com.br/" class="logo">
                 <i class="fas fa-microchip"></i> Smartboard Lab
             </a>
             <a href="https://wa.me/5541974037270?text=Olá,%20preciso%20de%20orçamento%20para%20meu%20MacBook Air Retina 13 A2179." target="_blank" class="btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;" onclick="fbq('track', 'Contact');">
-                <i class="fab fa-whatsapp"></i> Falar com Técnico
+                <i class="fab fa-whatsapp"></i> Solicitar Coleta VIP
             </a>
         </div>
     </header>
@@ -161,16 +167,16 @@
                 
                 <div style="margin-bottom: 2rem; display: flex; gap: 15px; flex-wrap: wrap;">
                     <span style="background: rgba(52, 211, 153, 0.1); color: var(--accent-teal); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;"><i class="fas fa-check-circle"></i> Engenharia Diagnóstica</span>
-                    <span style="background: rgba(52, 211, 153, 0.1); color: var(--accent-teal); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;"><i class="fas fa-check-circle"></i> Atendimento em Curitiba</span>
+                    <span style="background: rgba(52, 211, 153, 0.1); color: var(--accent-teal); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;"><i class="fas fa-check-circle"></i> Coleta VIP em Curitiba</span>
                 </div>
 
                 <a href="https://wa.me/5541974037270?text=Olá,%20preciso%20de%20ajuda%20com%20meu%20MacBook Air Retina 13 A2179." target="_blank" class="btn-primary" onclick="fbq('track', 'Contact');">
-                    Consultar Orçamento
+                    Solicitar Avaliação Técnica
                 </a>
             </div>
             
             <div class="hero-image">
-                <img src="../../assets/reparo-placa-logica-iphone-microsoldagem-curitiba-smartboard-lab.jpg" alt="Técnico da Smartboard Lab realizando o reparo de MacBook Air Retina 13 A2179 na região do Hugo Lange em Curitiba">
+                <img src="../../assets/troca-tampa-traseira-iphone-13-pro-max-smartboard-lab-cajuru-curitiba.jpg" alt="Técnico da Smartboard Lab realizando o reparo de MacBook Air Retina 13 A2179 na região do Hugo Lange em Curitiba">
                 <div class="badge">Laboratório de Alta Precisão</div>
             </div>
         </section>
@@ -244,11 +250,21 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <button class="faq-question">
+                        Vocês possuem atendimento de balcão?
+                        <i class="fas fa-chevron-down" style="transition: 0.3s;"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Não possuímos atendimento de balcão. A microssoldagem e a extração de dados exigem um ambiente de alta concentração e controle livre de interrupções. O atendimento é feito inteiramente através do nosso serviço de Coleta VIP via motoboy ou recebimentos via Sedex.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
                         Vocês atendem clientes de fora de Curitiba?
                         <i class="fas fa-chevron-down" style="transition: 0.3s;"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Sim. Embora nosso laboratório esteja em Curitiba (atendendo toda a região, incluindo Hugo Lange), recebemos aparelhos via correio de todo o Brasil com seguro integral do equipamento.</p>
+                        <p>Sim. Embora nosso laboratório atenda toda a região de Curitiba (incluindo Hugo Lange) através da Coleta VIP, recebemos aparelhos via Sedex de todo o Brasil diretamente em nossa Central de Recebimento oficial nos Correios.</p>
                     </div>
                 </div>
 
@@ -261,21 +277,11 @@
                         <p>Na grande maioria dos casos de curto em linhas de alimentação, o reparo recupera o acesso total aos seus dados (fotos, senhas, arquivos) sem necessidade de restauração de software.</p>
                     </div>
                 </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Qual a garantia do serviço executado?
-                        <i class="fas fa-chevron-down" style="transition: 0.3s;"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Oferecemos garantia especializada sobre o componente reparado. A Smartboard Lab utiliza insumos de solda de classe industrial para garantir que a falha eletrônica não volte a ocorrer.</p>
-                    </div>
-                </div>
             </div>
             
             <div class="text-center" style="margin-top: 4rem;">
                 <a href="https://wa.me/5541974037270" target="_blank" class="btn-primary" style="font-size: 1.1rem; padding: 1.2rem 3rem;" onclick="fbq('track', 'Contact');">
-                    Agendar Avaliação Técnica
+                    Agendar Coleta e Avaliação
                 </a>
             </div>
         </div>
@@ -289,7 +295,7 @@
                     <a href="https://smartboardlab.com.br/">Reparo de Placa e Assistência Apple em Curitiba</a>. 
                     Nosso laboratório especializado em <strong>microsoldagem avançada</strong> soluciona falhas críticas como 
                     <strong>curto na malha VDD_MAIN</strong>, reparo de <strong>Face ID</strong> e erro <strong>4013</strong>. 
-                    Atendemos a região do <strong>Hugo Lange</strong> e todos os bairros de Curitiba com engenharia de precisão e diagnóstico focado no MacBook Air Retina 13 A2179.
+                    Atendemos a região do <strong>Hugo Lange</strong> via Coleta VIP e todos os bairros de Curitiba com engenharia de precisão e diagnóstico focado no MacBook Air Retina 13 A2179.
                 </p>
             </div>
         </div>
@@ -298,7 +304,8 @@
     <footer id="contato">
         <div class="container text-center">
             <h2 style="color: #fff; margin-bottom: 1rem;"><i class="fas fa-microchip" style="color: var(--accent-teal);"></i> Smartboard Lab</h2>
-            <p style="color: var(--text-light); font-weight: bold;">Especialistas em Curitiba - PR</p>
+            <p style="color: var(--text-light); font-weight: bold;">Atendimento Exclusivo via Coleta VIP e Sedex (Sem Balcão)</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 10px;">Curitiba - PR</p>
             <p class="disclaimer">
                 *Aviso: A Smartboard Lab é um laboratório de engenharia eletrônica independente. Não possuímos vínculo direto com a fabricante. O termo "Apple", "iPhone" e "MacBook" são utilizados exclusivamente como referência de compatibilidade de serviço.
             </p>
