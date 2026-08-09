@@ -4,7 +4,9 @@ const path = require('path');
 // 1. Lê os dados EXCLUSIVOS do lote automotivo
 const rawData = fs.readFileSync('matriz_automotiva_lote1.json');
 const paginas = JSON.parse(rawData);
-const template = fs.readFileSync('template.html', 'utf8');
+
+// LÊ O NOVO TEMPLATE EXCLUSIVO PARA ECUs
+const template = fs.readFileSync('template_ecu.html', 'utf8');
 
 // 2. Diretório raiz
 const outputDir = __dirname; 
@@ -13,26 +15,29 @@ const outputDir = __dirname;
 const assetsDir = path.join(__dirname, 'assets');
 let imagensDisponiveis = [];
 if (fs.existsSync(assetsDir)) {
-    // A trava lógica: Puxa APENAS imagens JPG que comecem com "ecu-"
+    // Puxa APENAS imagens JPG que comecem com "ecu-"
     imagensDisponiveis = fs.readdirSync(assetsDir).filter(file => 
         (file.endsWith('.jpg') || file.endsWith('.jpeg')) && file.startsWith('ecu-')
     );
 }
 
-// Fallback de segurança caso esqueça de adicionar as imagens na pasta
+// Fallback de segurança
 if (imagensDisponiveis.length === 0) {
     imagensDisponiveis = ['placeholder-automotivo.jpg'];
 }
 
 console.log(`R2-D2: Compilando malha automotiva e gerando Sitemap isolado...\n`);
 
-// 4. Dicionário de Barramento Automotivo
-const nomesCategorias = {
-    'reparo-modulo-injecao': 'Reparo de Centrais de Injeção (ECU)',
-    'reparo-modulo-cambio': 'Reparo de Módulos de Câmbio (TCM)'
-};
+// 4. Regra de Gramática para o Template
+function getPreposicao(cidade) {
+    const no = ["Rio de Janeiro", "Rio Grande"];
+    const na = ["Serra", "Cariacica", "Campina Grande", "Várzea Grande", "Luziânia"];
+    if (no.includes(cidade)) return "no";
+    if (na.includes(cidade)) return "na";
+    return "em";
+}
 
-// 5. INICIA A CONSTRUÇÃO DO SITEMAP XML (Isolado para Lote 1)
+// 5. INICIA A CONSTRUÇÃO DO SITEMAP XML (Isolado)
 let sitemapXML = `<?xml version="1.0" encoding="UTF-8"?>\n`;
 sitemapXML += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
@@ -46,22 +51,18 @@ hubs.forEach(hub => {
 paginas.forEach(pagina => {
     let htmlFinal = template;
     const imagemSorteada = imagensDisponiveis[Math.floor(Math.random() * imagensDisponiveis.length)];
-    const categoriaNome = nomesCategorias[pagina.categoria] || 'Reparo Eletrônico Automotivo';
+    const prep = getPreposicao(pagina.cidade);
 
-    // Substituições do Template (Injetando a Cidade na tag Bairro existente no template)
+    // Substituições do Template ECU
     htmlFinal = htmlFinal.replace(/{{SLUG}}/g, pagina.slug);
     htmlFinal = htmlFinal.replace(/{{TITULO_SEO}}/g, pagina.titulo_seo);
     htmlFinal = htmlFinal.replace(/{{META_DESC}}/g, pagina.meta_desc);
     htmlFinal = htmlFinal.replace(/{{H1}}/g, pagina.h1);
     htmlFinal = htmlFinal.replace(/{{BAIRRO}}/g, pagina.cidade); 
+    htmlFinal = htmlFinal.replace(/{{PREP}}/g, prep); 
     htmlFinal = htmlFinal.replace(/{{MODELO}}/g, pagina.modelo);
     htmlFinal = htmlFinal.replace(/{{SINTOMA}}/g, pagina.sintoma);
     htmlFinal = htmlFinal.replace(/{{TEXTO_DIAGNOSTICO}}/g, pagina.texto_diagnostico);
-    
-    // Tags Estruturais
-    htmlFinal = htmlFinal.replace(/{{CATEGORIA_LINK}}/g, pagina.categoria);
-    htmlFinal = htmlFinal.replace(/{{CATEGORIA}}/g, pagina.categoria);
-    htmlFinal = htmlFinal.replace(/{{CATEGORIA_NOME}}/g, categoriaNome);
     
     // Ajuste da imagem
     htmlFinal = htmlFinal.replace(/assets\/{{IMAGEM_AUTOMATICA}}/g, `../assets/${imagemSorteada}`);
@@ -86,4 +87,4 @@ sitemapXML += `</urlset>`;
 fs.writeFileSync(path.join(outputDir, 'sitemap_ecus_lote1.xml'), sitemapXML, 'utf8');
 
 console.log(`[+] Renderização do lote automotivo concluída com sucesso.`);
-console.log(`[+] Isolamento garantido: O arquivo 'sitemap_ecus_lote1.xml' foi gerado sem sobrescrever as rotas da Apple.`);
+console.log(`[+] Isolamento garantido: O arquivo 'sitemap_ecus_lote1.xml' foi gerado utilizando 'template_ecu.html'.`);

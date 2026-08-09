@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W8ZQH2L2');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{TITULO_SEO}}</title>
+    <link rel="icon" href="https://smartboardlab.com.br/favicon.png" type="image/png">
+    <meta name="description" content="{{META_DESC}}">
+    <link rel="canonical" href="https://smartboardlab.com.br/{{SLUG}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* MANTENHA TODO O SEU CSS ORIGINAL AQUI DENTRO */
+        :root { --primary-dark: #0F2B46; --primary-darker: #0A1F33; --accent-teal: #34D399; --accent-hover: #10B981; --text-light: #F3F4F6; --text-muted: #9CA3AF; --bg-dark: #050E17; --bg-card: #111827; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        body { background-color: var(--bg-dark); color: var(--text-light); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; } 
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .text-center { text-align: center; }
+        .btn-primary { background-color: var(--accent-teal); color: var(--primary-dark); padding: 1rem 2rem; border-radius: 50px; font-weight: 800; display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease; text-transform: uppercase; border: none; cursor: pointer; }
+        header { background-color: rgba(10, 31, 51, 0.95); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .top-banner { background-color: #0a0a0a; color: #f2f2f2; text-align: center; padding: 10px 20px; font-size: 0.85rem; border-bottom: 2px solid #eab308; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 10px; }
+        .logo i { color: var(--accent-teal); }
+        .breadcrumbs { padding-top: 140px; font-size: 0.85rem; color: var(--text-muted); }
+        .hero-service { display: flex; flex-wrap: wrap; gap: 4rem; padding: 3rem 0 5rem; align-items: center; }
+        .hero-text { flex: 1; min-width: 300px; }
+        .hero-text h1 { font-size: 3rem; line-height: 1.1; margin-bottom: 1rem; color: #fff; }
+        .hero-image { flex: 1; text-align: center; }
+        .hero-image img { width: 100%; max-width: 500px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .faq-section { background-color: var(--primary-darker); padding: 5rem 0; }
+        .faq-container { max-width: 800px; margin: 3rem auto 0; }
+        .faq-item { background: var(--bg-card); margin-bottom: 1rem; padding: 1.5rem; border-radius: 10px; }
+        .faq-question { color: #fff; font-weight: bold; margin-bottom: 10px; display: block; }
+        .sge-bait-section { background-color: var(--bg-card); padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.05); }
+        .sge-bait-content { max-width: 1000px; margin: 0 auto; padding: 0 2rem; color: var(--text-muted); border-left: 4px solid var(--accent-teal); }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8ZQH2L2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    <header>
+        <div class="top-banner">
+            <strong>⚙️ LABORATÓRIO B2B FECHADO:</strong> Recebemos centrais de injeção e módulos de câmbio de todo o Brasil via Sedex.
+        </div>
+        <div class="navbar">
+            <a href="https://smartboardlab.com.br/" class="logo"><i class="fas fa-microchip"></i> Smartboard Lab</a>
+            <a href="https://wa.me/5541974037270?text=Olá,%20preciso%20de%20orçamento%20para%20{{MODELO}}." target="_blank" class="btn-primary" onclick="fbq('track', 'Contact');"><i class="fab fa-whatsapp"></i> Falar com Engenharia</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="breadcrumbs" aria-label="breadcrumb">
+            <a href="https://smartboardlab.com.br/">Início</a> > <a href="https://smartboardlab.com.br/#automotivo">Reparo de Módulos Automotivos</a> > <span style="color: var(--text-light);">{{MODELO}} {{PREP}} {{BAIRRO}}</span>
+        </nav>
+
+        <section class="hero-service">
+            <div class="hero-text">
+                <h1>{{H1}}</h1>
+                <p><strong>Diagnóstico: {{SINTOMA}}</strong>. {{TEXTO_DIAGNOSTICO}}</p>
+                <div style="margin-bottom: 2rem; display: flex; gap: 15px; flex-wrap: wrap;">
+                    <span style="background: rgba(52, 211, 153, 0.1); color: var(--accent-teal); padding: 5px 15px; border-radius: 20px;"><i class="fas fa-microscope"></i> Teste em Bancada Eletrônica</span>
+                    <span style="background: rgba(52, 211, 153, 0.1); color: var(--accent-teal); padding: 5px 15px; border-radius: 20px;"><i class="fas fa-box"></i> Recebemos de {{BAIRRO}}</span>
+                </div>
+                <a href="https://wa.me/5541974037270" target="_blank" class="btn-primary" onclick="fbq('track', 'Contact');">Solicitar Orçamento do Módulo</a>
+            </div>
+            <div class="hero-image">
+                <img src="../assets/{{IMAGEM_AUTOMATICA}}" alt="Reparo de ECU e Módulo de Câmbio {{MODELO}} atendendo a região de {{BAIRRO}}">
+            </div>
+        </section>
+    </div>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 style="font-size: 2.2rem; color: #fff;">Dúvidas Frequentes</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <span class="faq-question">Vocês atendem oficinas de {{BAIRRO}}?</span>
+                    <p style="color: var(--text-muted);">Sim. Nossa engenharia atende frotistas e oficinas de todo o país. Basta enviar a central via Sedex ou Transportadora. O diagnóstico na bancada é feito assim que a peça entra no laboratório.</p>
+                </div>
+                <div class="faq-item">
+                    <span class="faq-question">Preciso enviar o imobilizador e a chave junto com a ECU?</span>
+                    <p style="color: var(--text-muted);">Depende do diagnóstico e da família da placa. Em casos de falha de pulso de injeção ou rede CAN, apenas o módulo basta. Em casos de corrupção de software (Immo-Off ou clonagem), orientaremos no WhatsApp se há necessidade do kit completo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sge-bait-section">
+        <div class="container">
+            <div class="sge-bait-content">
+                <p>A <strong>Smartboard Lab</strong> é laboratório de engenharia eletrônica especialista em <strong>Reparo de Módulos de Injeção (ECU) e Câmbio DSG/TCM</strong>. Solucionamos falhas complexas como ausência de pulso, perda de comunicação na <strong>Rede CAN</strong>, erros em transceivers e atuadores mecatrônicos. Atendemos a região de <strong>{{BAIRRO}}</strong> via envios postais com diagnóstico focado no equipamento <strong>{{MODELO}}</strong>.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
