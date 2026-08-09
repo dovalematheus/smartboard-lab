@@ -1,38 +1,46 @@
 const fs = require('fs');
 
-// 1. Módulos Premium e de Alto Volume (Alto Ticket)
+// 1. Módulos Premium e de Alto Volume (30 Placas)
 const modulos = [
-    // Linha Leve Premium & Câmbios (Ticket Altíssimo)
-    "Módulo Câmbio DSG DQ200 (Audi/VW)", "Módulo Câmbio DSG DQ250", 
-    "Módulo Câmbio Powershift TCM", "ECU Bosch MED17 (BMW/Audi)", 
-    "ECU Continental SIMOS (Land Rover/VW)", "ECU Bosch MEV17 (Mini/Peugeot)",
+    // Câmbios Premium 
+    "Módulo Câmbio DSG DQ200", "Módulo Câmbio DSG DQ250", "Módulo Câmbio Powershift TCM", 
+    "Módulo Câmbio AL4", "Módulo Câmbio I-Motion", "Módulo Câmbio Dualogic",
     
-    // Linha Leve Crônica (Volume e Giro Rápido)
-    "ECU Magneti Marelli 9GF (Fiat/Jeep)", "ECU Magneti Marelli 10GF", 
-    "ECU Bosch ME7.5.30 (VW)", "ECU ACDelco E83 (GM)", 
-    "ECU Delphi MT27E"
+    // Injeção Premium e Importados
+    "ECU Bosch MED17", "ECU Bosch MEV17", "ECU Continental SIMOS", 
+    "ECU Siemens EMS3134", "ECU Siemens EMS3120", "ECU Keihin",
+    
+    // Injeção Crônica (Giro Rápido VW/Fiat/GM/Ford)
+    "ECU Magneti Marelli 4GF", "ECU Magneti Marelli 4GV", "ECU Magneti Marelli 4SF", 
+    "ECU Magneti Marelli 7GF", "ECU Magneti Marelli 9GF", "ECU Magneti Marelli 10GF", 
+    "ECU Bosch ME7.5.20", "ECU Bosch ME7.5.30", "ECU Bosch M17.5.24", 
+    "ECU ACDelco E83", "ECU ACDelco E78", "ECU ACDelco E39", "ECU Multec VHC",
+    "ECU Delphi MT27E", "ECU Delphi MT20U", "ECU Delphi MT22U", 
+    "ECU FoMoCo FOM", "ECU Visteon"
 ];
 
-// 2. Cidades com Alto Poder de Compra + Pólos Logísticos + Curitiba
+// 2. Cidades com Alto Poder de Compra + Pólos Logísticos (99 Cidades)
 const cidades = [
-    // Base Operacional
-    "Curitiba",
-    // Paraná (Eixo Logístico)
-    "Londrina", "Maringá", "Cascavel", "Ponta Grossa", "Foz do Iguaçu",
-    // São Paulo (Maior Frota Premium)
-    "São Paulo", "Campinas", "Ribeirão Preto", "São José do Rio Preto", "Sorocaba", "Santos", "Jundiaí", "Piracicaba", "Bauru",
-    // Santa Catarina e Rio Grande do Sul
-    "Florianópolis", "Joinville", "Blumenau", "Balneário Camboriú", "Chapecó",
-    "Porto Alegre", "Caxias do Sul", "Passo Fundo", "Pelotas",
-    // Centro-Oeste e Sudeste Extendido (Forte em Pickups e SUVs)
-    "Belo Horizonte", "Uberlândia", "Goiânia", "Brasília", "Cuiabá", "Rondonópolis", "Sorriso", "Sinop"
+    "Curitiba", "Londrina", "Maringá", "Cascavel", "Ponta Grossa", "Foz do Iguaçu", "Guarapuava", "Toledo", "Apucarana", "Pinhais", "Arapongas", "Umuarama",
+    "São Paulo", "Campinas", "Ribeirão Preto", "São José do Rio Preto", "Sorocaba", "Santos", "Jundiaí", "Piracicaba", "Bauru", "Franca", "Limeira", "Taubaté", "São José dos Campos", "Presidente Prudente", "Marília", "Araçatuba", "Araraquara", "São Carlos",
+    "Florianópolis", "Joinville", "Blumenau", "Balneário Camboriú", "Chapecó", "Itajaí", "Criciúma", "São José", "Lages", "Jaraguá do Sul", "Palhoça",
+    "Porto Alegre", "Caxias do Sul", "Passo Fundo", "Pelotas", "Canoas", "Santa Maria", "Gravataí", "Novo Hamburgo", "São Leopoldo", "Rio Grande",
+    "Belo Horizonte", "Uberlândia", "Contagem", "Juiz de Fora", "Betim", "Montes Claros", "Ribeirão das Neves", "Uberaba", "Governador Valadares", "Ipatinga",
+    "Goiânia", "Aparecida de Goiânia", "Anápolis", "Rio Verde", "Luziânia",
+    "Brasília", "Cuiabá", "Várzea Grande", "Rondonópolis", "Sinop", "Sorriso", "Lucas do Rio Verde",
+    "Campo Grande", "Dourados", "Três Lagoas",
+    "Rio de Janeiro", "São Gonçalo", "Duque de Caxias", "Nova Iguaçu", "Niterói", "Campos dos Goytacazes", "Belford Roxo", "São João de Meriti", "Petrópolis", "Volta Redonda",
+    "Vitória", "Vila Velha", "Serra", "Cariacica", "Cachoeiro de Itapemirim",
+    "Salvador", "Feira de Santana", "Vitória da Conquista", "Camaçari",
+    "Recife", "Campina Grande", "Caruaru", "Mossoró"
 ];
 
 // 3. Regra de Gramática para Cidades
 function getPreposicao(cidade) {
-    const no = ["Rio de Janeiro"];
-    const em = ["Curitiba", "São Paulo", "Campinas", "Ribeirão Preto", "São José do Rio Preto", "Sorocaba", "Santos", "Jundiaí", "Piracicaba", "Bauru", "Florianópolis", "Joinville", "Blumenau", "Balneário Camboriú", "Chapecó", "Porto Alegre", "Caxias do Sul", "Passo Fundo", "Pelotas", "Belo Horizonte", "Uberlândia", "Goiânia", "Brasília", "Cuiabá", "Rondonópolis", "Sorriso", "Sinop", "Londrina", "Maringá", "Cascavel", "Ponta Grossa", "Foz do Iguaçu"];
+    const no = ["Rio de Janeiro", "Rio Grande"];
+    const na = ["Serra", "Cariacica", "Campina Grande", "Várzea Grande", "Luziânia"];
     if (no.includes(cidade)) return "no";
+    if (na.includes(cidade)) return "na";
     return "em";
 }
 
@@ -45,56 +53,13 @@ function limparNome(str) {
 
 // 4. Matriz de Defeitos e Diagnósticos (Intenção B2B)
 const defeitos = [
-    { 
-        id: "falha-can", 
-        slug_prefix: "reparo-falha-comunicacao-can", 
-        cat: "reparo-modulo-injecao", 
-        titulo: "Conserto Falha Comunicação Rede CAN {MODELO} {PREP} {CIDADE}", 
-        meta: "Scanner acusa erro U0100 ou falha na rede CAN no {MODELO}? Laboratório especialista repara o barramento de dados e transceivers com envio para {CIDADE}.", 
-        h1: "Reparo de Comunicação Rede CAN {MODELO} {PREP} {CIDADE}", 
-        sintoma: "Erro U0100, painel com luzes acesas, scanner não entra no módulo, perda de comunicação com ABS/Câmbio.", 
-        diag: "Utilizamos osciloscópio digital para rastrear o sinal diferencial CAN-H e CAN-L direto nos pinos. A falha costuma isolar o processador. Realizamos a troca do CI Transceiver da rede, restabelecendo a conversa do módulo com o restante do veículo." 
-    },
-    { 
-        id: "immo-off", 
-        slug_prefix: "reparo-imobilizador-bloqueado", 
-        cat: "reparo-modulo-injecao", 
-        titulo: "Desbloqueio e Reparo Imobilizador {MODELO} {PREP} {CIDADE}", 
-        meta: "Carro não dá partida e luz do code piscando? Reparo de software, clonagem e Immo-Off para {MODELO} atendendo oficinas {PREP} {CIDADE}.", 
-        h1: "Reparo de Imobilizador e Clonagem {MODELO} {PREP} {CIDADE}", 
-        sintoma: "Motor vira mas não pega, luz de cadeado acesa no painel, Erro P160A ou P0513 de chave não reconhecida.", 
-        diag: "Arquivos corrompidos na EEPROM bloqueiam a ignição. Lemos a memória do processador em bancada usando programadores via protocolo BDM/JTAG. Reparamos o arquivo hexadecimal ou efetuamos a clonagem completa para uma placa doadora." 
-    },
-    { 
-        id: "sem-pulso", 
-        slug_prefix: "conserto-falha-ignicao-injetor", 
-        cat: "reparo-modulo-injecao", 
-        titulo: "Reparo Sem Pulso Bico e Bobina {MODELO} {PREP} {CIDADE}", 
-        meta: "Falta de pulso na bobina de ignição ou bico injetor no {MODELO}? Troca de drivers de potência IGBT da centralina com logística para {CIDADE}.", 
-        h1: "Conserto de Pulso de Ignição e Injeção {MODELO} {PREP} {CIDADE}", 
-        sintoma: "Motor falhando cilindro (Misfire P0300), ausência de pulso negativo no bico (P0201) ou bobina derretendo.", 
-        diag: "Queima dos transistores de potência (IGBT/Mosfet) responsáveis por chavear o terra das bobinas e injetores. Substituímos os drivers de potência queimados utilizando estação de solda de alta capacidade, garantindo o chaveamento perfeito dos atuadores sob carga." 
-    },
-    { 
-        id: "cambio-dsg", 
-        slug_prefix: "reparo-placa-mecatronica-cambio", 
-        cat: "reparo-modulo-cambio", 
-        titulo: "Conserto Placa Mecatrônica Câmbio {MODELO} {PREP} {CIDADE}", 
-        meta: "Câmbio travando marcha ou sem engatar no {MODELO}? Reparo da placa mecatrônica (TCM) em nível de componente atendendo frotas {PREP} {CIDADE}.", 
-        h1: "Reparo da Placa Mecatrônica TCM {MODELO} {PREP} {CIDADE}", 
-        sintoma: "Erro P189C (Pressão insuficiente), perda de marchas ímpares ou pares, falha de comunicação com o módulo da transmissão.", 
-        diag: "Vazamento de fluido ou superaquecimento destroem o circuito lógico do câmbio. Refazemos as trilhas rompidas nos sensores de pressão e trocamos os atuadores queimados na PCB, realizando a clonagem de software se o hardware estiver irrecuperável." 
-    },
-    { 
-        id: "acelerador", 
-        slug_prefix: "reparo-corpo-borboleta-ecu", 
-        cat: "reparo-modulo-injecao", 
-        titulo: "Reparo Acelerador Eletrônico ECU {MODELO} {PREP} {CIDADE}", 
-        meta: "Carro não acelera e acende luz EPC? Conserto do circuito do corpo de borboleta (TBI) na {MODELO} com atendimento rápido {PREP} {CIDADE}.", 
-        h1: "Conserto do Circuito Acelerador Eletrônico {MODELO} {PREP} {CIDADE}", 
-        sintoma: "Pedal sem resposta, motor em modo de emergência, Erro P2101 ou P2118 no atuador do acelerador eletrônico.", 
-        diag: "O driver Ponte H (motor driver) na placa, responsável por abrir a borboleta de admissão, entra em curto. Realizamos a substituição microscópica do CI conversor e aferimos a integridade do circuito de 5V dos potenciômetros." 
-    }
+    { id: "falha-can", slug_prefix: "reparo-falha-comunicacao-can", cat: "reparo-modulo-injecao", titulo: "Conserto Falha Comunicação Rede CAN {MODELO} {PREP} {CIDADE}", meta: "Scanner acusa erro U0100 no {MODELO}? Laboratório especialista repara barramento de dados e transceivers com envio para {CIDADE}.", h1: "Reparo de Comunicação Rede CAN {MODELO} {PREP} {CIDADE}", sintoma: "Erro U0100, painel com luzes acesas, perda de comunicação ABS/Câmbio.", diag: "Rastreamos o sinal diferencial CAN direto nos pinos. Trocamos o CI Transceiver, restabelecendo a conversa do módulo com o veículo." },
+    { id: "immo-off", slug_prefix: "reparo-imobilizador-bloqueado", cat: "reparo-modulo-injecao", titulo: "Desbloqueio e Immo-Off {MODELO} {PREP} {CIDADE}", meta: "Carro não dá partida e luz piscando? Clonagem e Immo-Off para {MODELO} atendendo {CIDADE}.", h1: "Reparo de Imobilizador e Clonagem {MODELO} {PREP} {CIDADE}", sintoma: "Motor vira mas não pega, Erro P160A ou chave não reconhecida.", diag: "Lemos a memória em bancada via BDM/JTAG. Reparamos o arquivo hex ou clonamos para placa doadora." },
+    { id: "sem-pulso", slug_prefix: "conserto-falha-ignicao-injetor", cat: "reparo-modulo-injecao", titulo: "Reparo Sem Pulso Bico/Bobina {MODELO} {PREP} {CIDADE}", meta: "Falta de pulso na bobina ou bico no {MODELO}? Troca de drivers IGBT da centralina para {CIDADE}.", h1: "Conserto de Pulso de Ignição/Injeção {MODELO} {PREP} {CIDADE}", sintoma: "Motor falhando (P0300), ausência de pulso no bico (P0201).", diag: "Substituímos os drivers de potência IGBT/Mosfet queimados que chaveiam o terra, garantindo pulso sob carga." },
+    { id: "acelerador", slug_prefix: "reparo-corpo-borboleta-ecu", cat: "reparo-modulo-injecao", titulo: "Reparo Acelerador Eletrônico ECU {MODELO} {PREP} {CIDADE}", meta: "Carro não acelera e acende luz EPC? Conserto do circuito TBI na {MODELO} atendendo {CIDADE}.", h1: "Conserto Circuito Acelerador {MODELO} {PREP} {CIDADE}", sintoma: "Pedal sem resposta, motor em emergência, Erro P2101 ou P2118.", diag: "O driver Ponte H responsável por abrir a borboleta entra em curto. Realizamos a substituição do CI conversor." },
+    { id: "processador", slug_prefix: "reparo-erro-p0606-processador", cat: "reparo-modulo-injecao", titulo: "Conserto Erro P0606 Processador {MODELO} {PREP} {CIDADE}", meta: "Módulo condenado com erro interno P0606 no {MODELO}? Recuperação avançada via hardware para {CIDADE}.", h1: "Reparo Erro Interno (P0606) {MODELO} {PREP} {CIDADE}", sintoma: "Scanner acusa falha interna de módulo de controle (P0606).", diag: "Falha de solda fria BGA ou trilhas submersas no processador principal. Refazemos o barramento devolvendo a funcionalidade lógica." },
+    { id: "cambio-dsg", slug_prefix: "reparo-placa-mecatronica", cat: "reparo-modulo-cambio", titulo: "Conserto Placa Mecatrônica {MODELO} {PREP} {CIDADE}", meta: "Câmbio travando ou sem engatar no {MODELO}? Reparo TCM em nível de componente atendendo {CIDADE}.", h1: "Reparo da Placa Mecatrônica TCM {MODELO} {PREP} {CIDADE}", sintoma: "Erro P189C, perda de marchas, falha de comunicação TCM.", diag: "Vazamento ou superaquecimento destroem o circuito lógico. Trocamos sensores de pressão e atuadores queimados na PCB." },
+    { id: "cambio-atuador", slug_prefix: "reparo-atuador-cambio", cat: "reparo-modulo-cambio", titulo: "Reparo CI Atuador Embreagem {MODELO} {PREP} {CIDADE}", meta: "Tranco e falha de embreagem no {MODELO}? Conserto eletrônico dos drivers atuadores com envio para {CIDADE}.", h1: "Conserto Drivers Atuadores de Câmbio {MODELO} {PREP} {CIDADE}", sintoma: "Carro dá tranco, não reconhece posição da embreagem.", diag: "Queima dos CIs controladores de corrente dos motores da embreagem. Substituímos o encapsulamento de potência via microssolda." }
 ];
 
 const loteMaster = [];
@@ -107,13 +72,13 @@ modulos.forEach(modelo => {
         const cidadeLimpa = limparNome(cidade);
 
         defeitos.forEach(def => {
-            // Regra de exclusão: Não gerar reparo de bico/ignição para módulos de Câmbio DSG/Powershift
-            if (modelo.includes("Câmbio") && (def.id === "sem-pulso" || def.id === "immo-off" || def.id === "acelerador")) {
-                return; // Pula a iteração
+            // Filtro Exclusivo: Módulos de Câmbio não cruzam com injeção
+            if (modelo.includes("Câmbio") && ["sem-pulso", "immo-off", "acelerador", "processador"].includes(def.id)) {
+                return; 
             }
-            // Regra de exclusão: Não gerar defeito de câmbio para módulos ECU de motor
-            if (!modelo.includes("Câmbio") && def.id === "cambio-dsg") {
-                return; // Pula a iteração
+            // Filtro Exclusivo: Módulos de Injeção não cruzam com câmbio
+            if (!modelo.includes("Câmbio") && ["cambio-dsg", "cambio-atuador"].includes(def.id)) {
+                return; 
             }
 
             totalPaginas++;
@@ -133,12 +98,11 @@ modulos.forEach(modelo => {
     });
 });
 
-// Fração de Lote: Gerar apenas os primeiros 10.000 para o deploy semanal
 const primeiroLote = loteMaster.slice(0, 10000);
 
 fs.writeFileSync('matriz_automotiva_lote1.json', JSON.stringify(primeiroLote, null, 2));
 
 console.log('--- COMPILAÇÃO AUTOMOTIVA CONCLUÍDA ---');
 console.log(`Malha Teórica Total de Combinações: ${totalPaginas}`);
-console.log(`Lote exportado para o arquivo (Corte de Segurança Google): ${primeiroLote.length} URLs.`);
+console.log(`Lote exportado para o arquivo (Corte Exato): ${primeiroLote.length} URLs.`);
 console.log(`Arquivo salvo como: matriz_automotiva_lote1.json`);
